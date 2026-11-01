@@ -6,6 +6,7 @@
 #include "p_music.h"
 
 #include "usersoundtrack.h"
+#include "BinkAudio.h"
 
 #include <Sys/Config/config.h>
 #include <Gel/SoundFX/soundfx.h>
@@ -25,15 +26,6 @@
 
 namespace File
 {
-static std::filesystem::path DataPath()
-{
-	char		nameConversionBuffer[256];
-	GetModuleFileNameA(NULL, nameConversionBuffer, 255);
-	PathRemoveFileSpecA(nameConversionBuffer);
-	strcat(nameConversionBuffer, "\\Data");
-
-	return nameConversionBuffer;
-}
 static std::filesystem::path ModulePath()
 {
 	char		nameConversionBuffer[256];
@@ -42,48 +34,80 @@ static std::filesystem::path ModulePath()
 
 	return nameConversionBuffer;
 }
+// The child of a folder called name, matched ignoring case like every other game file. Missing: name as given.
+static std::filesystem::path Child(const std::filesystem::path &parent, const char *name)
+{
+	std::error_code error;
+	for (auto &i : std::filesystem::directory_iterator(parent, error))
+	{
+		const std::string found = i.path().filename().string();
+		if (found.size() == strlen(name) && std::equal(found.begin(), found.end(), name,
+			[](char a, char b) { return tolower((unsigned char)a) == tolower((unsigned char)b); }))
+			return i.path();
+	}
+	return parent / name;
+}
+static std::filesystem::path DataPath()
+{
+	return Child(ModulePath(), "Data");
+}
 }
 
 namespace Pcm
 {
 	// Volume constants
 	static constexpr float MUSIC_VOLUME = 1.0f;
-	static constexpr float STREAM_VOLUME = 0.5f; // Streams are too loud, ripped from PS2
+	static constexpr float STREAM_VOLUME = 0.5f; // Loose stream files are too loud, ripped from PS2
+	static constexpr double vOUTPUT_RATE = 48000.0;
 
 	// Music decoder using miniaudio
 	class Streamer
 	{
 		private:
-			std::vector<char> buffer;
+			char *buffer = nullptr;
+			size_t buffer_size = 0;
 
 			bool paused = true;
 			bool playing = true;
+			bool m_held = false; // preloaded: unpausing must not start it, only starting it does
 
 			float volume[5] = { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f };
 
 		public:
-			virtual ~Streamer() = default;
+			virtual ~Streamer() { free(buffer); }
+
+			// Mix runs on the audio thread, and the game heap is not thread safe: streamers and their buffers use malloc
+			static void *operator new(size_t size) { return malloc(size); }
+			static void operator delete(void *p) { free(p); }
 
 			virtual void Rewind() = 0;
 			virtual size_t Stream(char *p, size_t bytes) = 0;
+			virtual void SetPitch(float percent) { (void)percent; }
+			virtual float GetStreamGain() const { return STREAM_VOLUME; }
 
 			size_t Mix(char *out, size_t bytes)
 			{
 				// If stopped or paused, return 0
-				if (!playing || paused)
+				if (!playing || paused || m_held)
 					return 0;
 
 				// Read in buffer
-				if (buffer.size() < bytes)
-					buffer.resize(bytes);
+				if (buffer_size < bytes)
+				{
+					char *grown = (char*)realloc(buffer, bytes);
+					if (grown == nullptr)
+						return 0;
+					buffer = grown;
+					buffer_size = bytes;
+				}
 
-				size_t read = Stream(buffer.data(), bytes);
+				size_t read = Stream(buffer, bytes);
 				if (read < bytes)
 					playing = false;
 
 				// Accumulate
 				float *a = (float*)out;
-				float *b = (float*)buffer.data();
+				float *b = (float*)buffer;
 				for (size_t i = 0; i < read / sizeof(float) / 5; i++)
 				{
 					for (int c = 0; c < 5; c++)
@@ -101,6 +125,17 @@ namespace Pcm
 			void Pause()
 			{
 				paused = true;
+			}
+
+			void Hold()
+			{
+				m_held = true;
+			}
+
+			void Start()
+			{
+				m_held = false;
+				paused = false;
 			}
 
 			void Stop()
@@ -195,6 +230,119 @@ namespace Pcm
 			}
 	};
 
+	// Retail music (stereo, kept to the front speakers) and speech (mono, panned by the stream volume),
+	// resampled to the mixer rate. A rate equal to the mixer's passes through untouched.
+	class CBinkDecoder : public Streamer
+	{
+		public:
+			CBinkDecoder(const std::filesystem::path &path, unsigned int fileOffset = 0)
+				: m_opened(m_bink.Open(path.string().c_str(), fileOffset))
+			{
+				if (m_opened)
+				{
+					m_rate_step = m_bink.GetSampleRate() / vOUTPUT_RATE;
+					m_step = m_rate_step;
+				}
+			}
+
+			bool				IsOpen() const { return m_opened; }
+
+			void SetPitch(float percent) override
+			{
+				if (percent > 0.0f)
+				{
+					m_step = m_rate_step * percent / 100.0f;
+				}
+			}
+
+			// Retail streams are mastered quieter than music, unlike the PS2 rips STREAM_VOLUME is for
+			float GetStreamGain() const override { return 1.0f; }
+
+		private:
+			void Rewind() override
+			{
+				if (m_opened)
+				{
+					m_bink.Rewind();
+				}
+				m_primed = false;
+			}
+
+			size_t Stream(char *p, size_t bytes) override
+			{
+				if (!m_opened)
+				{
+					return 0;
+				}
+
+				if (!m_primed)
+				{
+					if (m_bink.Read(m_current, 1) != 1 || m_bink.Read(m_next, 1) != 1)
+					{
+						return 0;
+					}
+					m_position = 0.0;
+					m_primed = true;
+				}
+
+				const size_t num_frames = bytes / (sizeof(float) * 5);
+				const bool stereo = (m_bink.GetNumChannels() == 2);
+				float *p_out = (float*)p;
+				for (size_t i = 0; i < num_frames; i++)
+				{
+					while (m_position >= 1.0)
+					{
+						m_current[0] = m_next[0];
+						m_current[1] = m_next[1];
+						if (m_bink.Read(m_next, 1) != 1)
+						{
+							return i * sizeof(float) * 5;
+						}
+						m_position -= 1.0;
+					}
+
+					const float frac = (float)m_position;
+					const float first = m_current[0] + (m_next[0] - m_current[0]) * frac;
+					if (stereo)
+					{
+						p_out[0] = first;
+						p_out[1] = m_current[1] + (m_next[1] - m_current[1]) * frac;
+						p_out[2] = 0.0f;
+						p_out[3] = 0.0f;
+						p_out[4] = 0.0f;
+					}
+					else
+					{
+						for (int c = 0; c < 5; c++)
+						{
+							p_out[c] = first;
+						}
+					}
+					p_out += 5;
+					m_position += m_step;
+				}
+				return num_frames * sizeof(float) * 5;
+			}
+
+			CBinkAudio			m_bink;
+			bool				m_opened;
+			double				m_rate_step = 1.0;			// source frames per output frame, at normal pitch
+			double				m_step = 1.0;
+			double				m_position = 0.0;			// between m_current and m_next
+			float				m_current[2] = {};
+			float				m_next[2] = {};
+			bool				m_primed = false;
+	};
+
+	static Streamer *OpenMusic(const std::filesystem::path &path)
+	{
+		CBinkDecoder *bink = new CBinkDecoder(path);
+		if (bink->IsOpen())
+			return bink;
+		delete bink;
+		return new MusicDecoder(path);
+	}
+
 	// Mixing streams
 	Streamer *music_stream = nullptr;
 	Streamer *stream_stream[NUM_STREAMS] = {};
@@ -219,6 +367,64 @@ namespace Pcm
 	static std::unordered_map<uint32, std::filesystem::path> music_paths;
 	static std::unordered_map<uint32, std::filesystem::path> stream_paths;
 
+	// Retail streams, packed in pcm.wad. pcm.dat: count, then checksum, offset, length, sorted by checksum.
+	static uint32 *sp_wad_index = nullptr;
+	static uint32 s_wad_entries = 0;
+	static std::filesystem::path s_wad_path;
+
+	////////////////////////////////////////////////////////////////////////
+	static void s_load_wad_index(const std::filesystem::path &folder)
+	{
+		std::FILE *p_file = std::fopen(File::Child(folder, "pcm.dat").string().c_str(), "rb");
+		if (p_file == nullptr)
+		{
+			return;
+		}
+
+		uint32 entries = 0;
+		if (std::fread(&entries, sizeof(entries), 1, p_file) == 1 && entries < 0x100000)
+		{
+			uint32 *p_index = (uint32*)malloc(entries * 3 * sizeof(uint32));
+			if (p_index != nullptr && std::fread(p_index, sizeof(uint32) * 3, entries, p_file) == entries)
+			{
+				sp_wad_index = p_index;
+				s_wad_entries = entries;
+				s_wad_path = File::Child(folder, "pcm.wad");
+			}
+			else
+			{
+				free(p_index);
+			}
+		}
+		std::fclose(p_file);
+	}
+
+	////////////////////////////////////////////////////////////////////////
+	static bool s_find_in_wad(uint32 checksum, uint32 *p_offset)
+	{
+		uint32 low = 0;
+		uint32 high = s_wad_entries;
+		while (low < high)
+		{
+			const uint32 middle = low + (high - low) / 2;
+			const uint32 *p_entry = sp_wad_index + middle * 3;
+			if (p_entry[0] == checksum)
+			{
+				*p_offset = p_entry[1];
+				return true;
+			}
+			if (p_entry[0] < checksum)
+			{
+				low = middle + 1;
+			}
+			else
+			{
+				high = middle;
+			}
+		}
+		return false;
+	}
+
 	static std::unordered_map<uint32, std::filesystem::path> Index(std::filesystem::path path)
 	{
 		if (!std::filesystem::exists(path))
@@ -232,7 +438,8 @@ namespace Pcm
 				std::string name = i.path().stem().string();
 				//uint32 checksum = Crc::GenerateCRCFromString(name.c_str());
 				uint32 checksum;
-				sscanf(name.c_str(), "%x", &checksum);
+				if (sscanf(name.c_str(), "%x", &checksum) != 1)
+					continue; // pcm.dat and pcm.wad
 
 				//uint32 checksum = std::stoi(name.c_str(), 0, 16);
 				paths[checksum] = std::filesystem::relative(i.path(), File::DataPath());
@@ -247,8 +454,18 @@ namespace Pcm
 		Audio::Init();
 
 		// Index music and streams
-		music_paths = Index(File::DataPath() / "music");
-		stream_paths = Index(File::DataPath() / "streams");
+		const std::filesystem::path streams = File::Child(File::DataPath(), "streams");
+		music_paths = Index(File::Child(File::DataPath(), "music"));
+		stream_paths = Index(streams);
+
+		// Retail music is in streams/music. Files in Data/music win, and these are not streams.
+		for (auto &i : Index(File::Child(streams, "music")))
+		{
+			music_paths.insert(i);
+			stream_paths.erase(i.first);
+		}
+
+		s_load_wad_index(File::Child(streams, "pcm"));
 	}
 
 
@@ -376,16 +593,15 @@ namespace Pcm
 	/******************************************************************/
 	bool PCMAudio_StartPreLoadedStream( int whichStream, Sfx::sVolume *p_volume, float pitch )
 	{
-		(void)whichStream;
-		(void)p_volume;
-		(void)pitch;
-
 		PCMAudio_SetStreamVolume(p_volume, whichStream);
 
 		Audio::Lock();
 
 		if (stream_stream[whichStream] != nullptr)
-			stream_stream[whichStream]->Play();
+		{
+			stream_stream[whichStream]->SetPitch(pitch);
+			stream_stream[whichStream]->Start();
+		}
 
 		Audio::Unlock();
 		
@@ -408,7 +624,7 @@ namespace Pcm
 
 		if (music_stream != nullptr)
 			delete music_stream;
-		music_stream = new MusicDecoder(File::DataPath() / it->second);
+		music_stream = OpenMusic(File::DataPath() / it->second);
 
 		Audio::Unlock();
 		return true;
@@ -575,8 +791,8 @@ namespace Pcm
 		if (ch != EXTRA_CHANNEL)
 			return 0;
 
-		auto it = stream_paths.find(checksum);
-		if (it == stream_paths.end())
+		uint32 offset;
+		if (stream_paths.find(checksum) == stream_paths.end() && !s_find_in_wad(checksum, &offset))
 			return 0;
 
 		return checksum;
@@ -597,6 +813,7 @@ namespace Pcm
 			Spt::SingletonPtr< Sfx::CSfxManager > sfx_manager;
 
 			float coef[5] = {};
+			const float stream_gain = stream_stream[whichStream]->GetStreamGain();
 
 			switch (p_volume->GetVolumeType())
 			{
@@ -604,24 +821,37 @@ namespace Pcm
 				{
 					// NOTE: sVolume is in the order of FL, C, FR, BL, BR
 					// So we need to swap C and FR to match what the mixer expects
-					coef[0] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(0)) / 100.0f * STREAM_VOLUME;
-					coef[1] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(1)) / 100.0f * STREAM_VOLUME;
-					coef[2] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(4)) / 100.0f * STREAM_VOLUME;
-					coef[3] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(2)) / 100.0f * STREAM_VOLUME;
-					coef[4] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(3)) / 100.0f * STREAM_VOLUME;
+					coef[0] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(0)) / 100.0f * stream_gain;
+					coef[1] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(1)) / 100.0f * stream_gain;
+					coef[2] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(4)) / 100.0f * stream_gain;
+					coef[3] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(2)) / 100.0f * stream_gain;
+					coef[4] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(3)) / 100.0f * stream_gain;
 					break;
 				}
 				case Sfx::VOLUME_TYPE_2_CHANNEL_DOLBYII:
 				{
-					coef[0] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(0)) / 100.0f * STREAM_VOLUME;
-					coef[1] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(1)) / 100.0f * STREAM_VOLUME;
+					coef[0] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(0)) / 100.0f * stream_gain;
+					coef[1] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(1)) / 100.0f * stream_gain;
 					break;
 				}
 				case Sfx::VOLUME_TYPE_BASIC_2_CHANNEL:
 				{
-					coef[0] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(0)) / 100.0f * STREAM_VOLUME;
-					coef[1] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(1)) / 100.0f * STREAM_VOLUME;
+					coef[0] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(0)) / 100.0f * stream_gain;
+					coef[1] = PERCENT(sfx_manager->GetMainVolume(), p_volume->GetChannelVolume(1)) / 100.0f * stream_gain;
 					break;
+				}
+			}
+
+			// Scripts ask for over 100%. Clamp as sound effects do; the sign is DolbyII phase.
+			for (int i = 0; i < 5; i++)
+			{
+				if (coef[i] > 1.0f)
+				{
+					coef[i] = 1.0f;
+				}
+				else if (coef[i] < -1.0f)
+				{
+					coef[i] = -1.0f;
 				}
 			}
 
@@ -667,8 +897,14 @@ namespace Pcm
 	/******************************************************************/
 	bool PCMAudio_SetStreamPitch( float fPitch, int whichStream )
 	{
-		(void)fPitch;
-		(void)whichStream;
+		Audio::Lock();
+
+		if (stream_stream[whichStream] != nullptr)
+		{
+			stream_stream[whichStream]->SetPitch(fPitch);
+		}
+
+		Audio::Unlock();
 		return true;
 	}
 
@@ -709,7 +945,7 @@ namespace Pcm
 		if (music_stream != nullptr)
 			delete music_stream;
 
-		music_stream = new MusicDecoder(File::DataPath() / it->second);
+		music_stream = OpenMusic(File::DataPath() / it->second);
 		music_stream->Play();
 
 		Audio::Unlock();
@@ -747,7 +983,7 @@ namespace Pcm
 		Audio::Lock();
 
 		if (stream_stream[whichStream] != nullptr)
-			stream_stream[whichStream]->Play();
+			stream_stream[whichStream]->Start();
 
 		Audio::Unlock();
 
@@ -762,12 +998,30 @@ namespace Pcm
 	/******************************************************************/
 	bool PCMAudio_PlayStream( uint32 checksum, int whichStream, Sfx::sVolume *p_volume, float fPitch, bool preload )
 	{
-		(void)fPitch;
-
-		// Find stream path from checksum
+		// Open before taking the lock: the audio thread shouldn't wait on the disk. Loose files win over the wad.
+		Streamer *p_new_stream = nullptr;
+		uint32 wad_offset;
 		auto it = stream_paths.find(checksum);
-		if (it == stream_paths.end())
+		if (it != stream_paths.end())
+		{
+			p_new_stream = OpenMusic(File::DataPath() / it->second);
+		}
+		else if (s_find_in_wad(checksum, &wad_offset))
+		{
+			CBinkDecoder *p_bink = new CBinkDecoder(s_wad_path, wad_offset);
+			if (!p_bink->IsOpen())
+			{
+				delete p_bink;
+				return false;
+			}
+			p_new_stream = p_bink;
+		}
+		else
+		{
 			return false;
+		}
+
+		p_new_stream->SetPitch(fPitch);
 
 		Audio::Lock();
 
@@ -775,9 +1029,15 @@ namespace Pcm
 		if (stream_stream[whichStream] != nullptr)
 			delete stream_stream[whichStream];
 
-		stream_stream[whichStream] = new MusicDecoder(File::DataPath() / it->second);
-		if (!preload)
-			stream_stream[whichStream]->Play();
+		stream_stream[whichStream] = p_new_stream;
+		if (preload)
+		{
+			p_new_stream->Hold();
+		}
+		else
+		{
+			p_new_stream->Start();
+		}
 
 		if (p_volume != nullptr)
 			PCMAudio_SetStreamVolume(p_volume, whichStream);

@@ -53,7 +53,7 @@ Port notes (build rules, platform quirks, renderer, testing): `port/notes/`.
 - Rip out music crc code and implement custom soundtracks
 - XAUDIO environmental FX
 - Fix consistent Texture Garbling
-- See if we can adapt a bink decoder (The music and FMV's are in bink format)
+- See if we can adapt a bink decoder for the FMV's (music and speech are done: `Gel/Music/SDL/BinkAudio`)
 
 ### Extra
 

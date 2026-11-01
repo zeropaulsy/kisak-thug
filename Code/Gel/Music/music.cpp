@@ -2417,7 +2417,11 @@ bool				CStreamFrameAmp::load(uint32 stream_checksum)
 	char filename[256];
 
 	// Generate filename from checksum
+#ifdef __PLAT_WN32__
+	sprintf(filename,"fam\\%08x.fam", stream_checksum);		// retail PC names are zero padded
+#else
 	sprintf(filename,"fam\\%x.fam", stream_checksum);
+#endif
 
 	// Open with async blocking for now.  Look to make truly async later.
 	p_handle = File::CAsyncFileLoader::sOpen(filename, true);
