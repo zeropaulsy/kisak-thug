@@ -2,9 +2,9 @@
 #ifndef	__ENGINE_CONTACT_H__
 #define	__ENGINE_CONTACT_H__
 
-#include <core/allmath.h>
-#include <gel/objptr.h>
-#include <gel/object/compositeobject.h>
+#include <Core/allmath.h>
+#include <Gel/ObjPtr.h>
+#include <Gel/Object/compositeobject.h>
 
 class	CContact
 {

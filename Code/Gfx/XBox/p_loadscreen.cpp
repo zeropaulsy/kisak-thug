@@ -23,13 +23,13 @@
 *****************************************************************************/
 
 #include <xtl.h>
-#include <core/defines.h>
-#include <sys/file/filesys.h>
-#include <sys/timer.h>
-#include <gel/mainloop.h>
-#include <gfx/gfxman.h>
-#include <gfx/nxviewport.h>
-#include <gel/scripting/script.h>
+#include <Core/Defines.h>
+#include <Sys/File/filesys.h>
+#include <Sys/timer.h>
+#include <Gel/mainloop.h>
+#include <Gfx/gfxman.h>
+#include <Gfx/NxViewport.h>
+#include <Gel/Scripting/script.h>
 
 /*****************************************************************************
 **								DBG Information								**

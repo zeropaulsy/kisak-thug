@@ -5,7 +5,7 @@
 #define	__GFX_P_NX_WIN2D_H__
 
 #include 	"Gfx/NxWin2D.h"
-#include 	"Gfx/Xbox/NX/sprite.h"
+#include 	"Gfx/XBox/NX/sprite.h"
 
 namespace Nx
 {

@@ -5,8 +5,8 @@
 #define	__GFX_P_NX_SPRITE_H__
 
 #include 	"Gfx/NxSprite.h"
-#include 	"Gfx/xbox/NX/texture.h"
-#include 	"Gfx/xbox/NX/sprite.h"
+#include 	"Gfx/XBox/NX/texture.h"
+#include 	"Gfx/XBox/NX/sprite.h"
 
 namespace Nx
 {

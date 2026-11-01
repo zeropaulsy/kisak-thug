@@ -13,11 +13,11 @@
 *****************************************************************************/
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
 
-#include <gfx/modelappearance.h>
-#include <sk/objects/skatertricks.h>
+#include <Gfx/ModelAppearance.h>
+#include <Sk/Objects/SkaterTricks.h>
 
 /*****************************************************************************
 **								   Defines									**

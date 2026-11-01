@@ -23,8 +23,8 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/singleton.h>
-#include <core/task.h>
+#include <Core/singleton.h>
+#include <Core/Task.h>
 
 /*****************************************************************************
 **								   Defines									**

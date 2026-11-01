@@ -22,22 +22,22 @@
 *****************************************************************************/
 
 #include <stdio.h>
-#include <core/defines.h>
-#include <sys/sys.h>
-#include <sys/timer.h>
-#include <sys/profiler.h>
+#include <Core/Defines.h>
+#include <Sys/sys.h>
+#include <Sys/timer.h>
+#include <Sys/Profiler.h>
 
 #ifndef __PLAT_WN32__
-#include <gfx/gfxman.h>
+#include <Gfx/gfxman.h>
 #endif // __PLAT_WN32__
 
 #ifdef	__PLAT_NGPS__	
-#include <gfx/ngps/nx/line.h>
+#include <Gfx/NGPS/NX/line.h>
 #endif
 #ifdef	__PLAT_NGC__	
-#include <sys\ngc\p_gx.h>
-#include <sys\ngc\p_prim.h>
-#include <sys\ngc\p_camera.h>
+#include <Sys/ngc/p_gx.h>
+#include <Sys/ngc/p_prim.h>
+#include <Sys/ngc/p_camera.h>
 #endif
 
 

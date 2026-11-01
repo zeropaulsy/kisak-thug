@@ -28,7 +28,7 @@
 //#include <gel/scripting/script.h>
 
 #ifndef	__SCRIPTING_STRUCT_H
-#include <gel/scripting/struct.h>
+#include <Gel/Scripting/struct.h>
 #endif
 
 

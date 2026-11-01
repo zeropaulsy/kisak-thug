@@ -5,20 +5,20 @@
 //* CREATION DATE:  3/27/2002
 //****************************************************************************
 
-#include <core/defines.h>
-#include "gfx/DX9/nx/nx_init.h"
-#include "gfx/DX9/p_nxparticle.h"
-#include "gfx/DX9/p_nxparticleline.h"
-#include "gfx/DX9/p_nxparticleflat.h"
-#include "gfx/DX9/p_nxparticleshaded.h"
-#include "gfx/DX9/p_nxparticlesmooth.h"
-#include "gfx/DX9/p_nxparticleglow.h"
-#include "gfx/DX9/p_nxparticlestar.h"
-#include "gfx/DX9/p_nxparticlesmoothstar.h"
-#include "gfx/DX9/p_nxparticleribbon.h"
-#include "gfx/DX9/p_nxparticlesmoothribbon.h"
-#include "gfx/DX9/p_nxparticleribbontrail.h"
-#include "gfx/DX9/p_nxparticleglowribbontrail.h"
+#include <Core/Defines.h>
+#include "Gfx/DX9/NX/nx_init.h"
+#include "Gfx/DX9/p_nxparticle.h"
+#include "Gfx/DX9/p_nxparticleline.h"
+#include "Gfx/DX9/p_nxparticleflat.h"
+#include "Gfx/DX9/p_NxParticleShaded.h"
+#include "Gfx/DX9/p_nxparticlesmooth.h"
+#include "Gfx/DX9/p_nxparticleglow.h"
+#include "Gfx/DX9/p_NxParticleStar.h"
+#include "Gfx/DX9/p_nxparticlesmoothstar.h"
+#include "Gfx/DX9/p_nxparticleribbon.h"
+#include "Gfx/DX9/p_nxparticlesmoothribbon.h"
+#include "Gfx/DX9/p_NxParticleRibbonTrail.h"
+#include "Gfx/DX9/p_nxparticleglowribbontrail.h"
 
 namespace Nx
 {

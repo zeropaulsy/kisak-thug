@@ -8,8 +8,8 @@
 #ifndef	__GFX_P_NX_PARTICLE_H__
 #define	__GFX_P_NX_PARTICLE_H__
     
-#include "gfx/nxparticle.h"
-#include "gfx/xbox/nx/particles.h"
+#include "Gfx/nxparticle.h"
+#include "Gfx/XBox/NX/particles.h"
                    
 namespace Nx
 {

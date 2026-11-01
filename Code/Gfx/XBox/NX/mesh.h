@@ -1,9 +1,9 @@
 #ifndef __MESH_H
 #define __MESH_H
 
-#include <core\allmath.h>
-#include <core\math\geometry.h>
-#include <gfx\nx.h>
+#include <Core/allmath.h>
+#include <Core/Math/geometry.h>
+#include <Gfx/nx.h>
 #include "material.h"
 
 namespace NxXbox

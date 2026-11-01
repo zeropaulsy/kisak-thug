@@ -511,7 +511,7 @@ typedef	sint64				nID64;
 //
 // Example: CRCD(0xdcd2a9d4, "object_id")
 
-#include <core/debug.h>
+#include <Core/Debug.h>
 
 
 
@@ -523,19 +523,19 @@ typedef	sint64				nID64;
 
 
 
-#include <core/support.h>
-#include <sys/mem/memman.h>
+#include <Core/support.h>
+#include <Sys/Mem/memman.h>
 
-#include <core/crc.h>
+#include <Core/crc.h>
 
 #ifdef	__PLAT_NGPS__
-#include <gfx/ngps/p_memview.h>
+#include <Gfx/NGPS/p_memview.h>
 #include "libsn.h"
 #elif defined( __PLAT_NGC__ )
-#include <gfx/ngc/p_memview.h>
+#include <Gfx/NGC/p_memview.h>
 //#include "libsn.h"
 #elif defined( __PLAT_XBOX__ )
-#include <gfx/xbox/p_memview.h>
+#include <Gfx/XBox/p_memview.h>
 #endif
 
 // Mick:  This check slows the game down quite a bit

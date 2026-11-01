@@ -5,22 +5,22 @@
 //* CREATION DATE:  6/19/2003
 //****************************************************************************
 
-#include <core/defines.h>
-#include "gfx/xbox/nx/render.h"
+#include <Core/Defines.h>
+#include "Gfx/XBox/NX/render.h"
 
-#include <gfx/NxTexMan.h>
-#include <gfx/xbox/p_nxtexture.h>
-#include "gfx/xbox/nx/mesh.h"
-#include "gfx/xbox/p_nxweather.h"
+#include <Gfx/NxTexMan.h>
+#include <Gfx/XBox/p_nxtexture.h>
+#include "Gfx/XBox/NX/mesh.h"
+#include "Gfx/XBox/p_nxweather.h"
 
-#include <sk/modules/skate/skate.h>
-#include <sk/objects/skater.h>
+#include <Sk/Modules/Skate/skate.h>
+#include <Sk/Objects/skater.h>
 
-#include <sk/engine/feeler.h>
-#include <engine/SuperSector.h>
-#include "gfx/nx.h"
+#include <Sk/Engine/feeler.h>
+#include <Engine/SuperSector.h>
+#include "Gfx/nx.h"
 
-#include "gfx/xbox/nx/sprite.h"
+#include "Gfx/XBox/NX/sprite.h"
 
 #define FEELER_START			50000.0f
 #define NUM_LINES_PER_BATCH		80

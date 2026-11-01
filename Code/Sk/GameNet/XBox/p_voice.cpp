@@ -22,12 +22,12 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
-#include <sys/McMan.h>
-#include <gel/mainloop.h>
-#include <gel/scripting/script.h>
+#include <Core/Defines.h>
+#include <Sys/McMan.h>
+#include <Gel/mainloop.h>
+#include <Gel/Scripting/script.h>
 #include <GameNet/GameNet.h>
-#include <GameNet/Xbox/p_voice.h>
+#include <GameNet/XBox/p_voice.h>
 
 /*****************************************************************************
 **								DBG Information								**

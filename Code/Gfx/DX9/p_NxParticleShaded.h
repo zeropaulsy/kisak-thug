@@ -1,8 +1,8 @@
 #ifndef	__GFX_P_NX_PARTICLESHADED_H__
 #define	__GFX_P_NX_PARTICLESHADED_H__
     
-#include "gfx/nxparticle.h"
-#include "gfx/DX9/nx/particles.h"
+#include "Gfx/nxparticle.h"
+#include "Gfx/DX9/NX/particles.h"
                    
 namespace Nx
 {

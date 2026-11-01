@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // p_NxFont.cpp
 
-#include 	"gfx/DX9/p_nxfont.h"
-#include 	"sys/config/config.h"
+#include 	"Gfx/DX9/p_nxfont.h"
+#include 	"Sys/Config/config.h"
 
 namespace Nx
 {

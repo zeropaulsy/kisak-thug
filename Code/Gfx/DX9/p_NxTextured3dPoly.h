@@ -1,7 +1,7 @@
 #ifndef	__GFX_P_NX_TEXTURED_3D_POLY_H__
 #define	__GFX_P_NX_TEXTURED_3D_POLY_H__
 
-#include <gfx/nxtextured3dpoly.h>
+#include <Gfx/NxTextured3dPoly.h>
 
 namespace Nx
 {

@@ -23,19 +23,19 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
-#include <core/macros.h>
-#include <core/singleton.h>
+#include <Core/Defines.h>
+#include <Core/macros.h>
+#include <Core/singleton.h>
 
 #ifdef __PLAT_NGPS__
-#include <gel/movies/ngps/p_movies.h>
+#include <Gel/Movies/Ngps/p_movies.h>
 #elif defined( __PLAT_XBOX__ )
-#include <gel/movies/xbox/p_movies.h>
+#include <Gel/Movies/Xbox/p_movies.h>
 #elif defined( __PLAT_NGC__ )
-#include <gel/movies/ngc/p_movies.h>
+#include <Gel/Movies/ngc/p_movies.h>
 #endif
 
-#include <sys/profiler.h>
+#include <Sys/Profiler.h>
 
 
 /*****************************************************************************

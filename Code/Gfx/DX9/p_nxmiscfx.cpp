@@ -1,21 +1,21 @@
-#include <core/defines.h>
+#include <Core/Defines.h>
 
-#include <gel/collision/collision.h>
-#include <gel/collision/colltridata.h>
-#include <gel/collision/movcollman.h>
-#include <gel/collision/batchtricoll.h>
-#include <engine/SuperSector.h>
+#include <Gel/Collision/Collision.h>
+#include <Gel/Collision/CollTriData.h>
+#include <Gel/Collision/MovCollMan.h>
+#include <Gel/Collision/BatchTriColl.h>
+#include <Engine/SuperSector.h>
 
-#include <gfx/nx.h>
-#include <gfx/nxtexman.h>
-#include <gfx/debuggfx.h>
-#include <gfx/NxViewMan.h>
-#include <gfx/NxMiscFX.h>
+#include <Gfx/nx.h>
+#include <Gfx/NxTexMan.h>
+#include <Gfx/debuggfx.h>
+#include <Gfx/NxViewMan.h>
+#include <Gfx/NxMiscFX.h>
 
-#include <gfx/DX9/p_nxgeom.h>
-#include <gfx/DX9/p_nxtexture.h>
+#include <Gfx/DX9/p_NxGeom.h>
+#include <Gfx/DX9/p_nxtexture.h>
 
-#include <gfx/DX9/nx/render.h>
+#include <Gfx/DX9/NX/render.h>
 #include "NX/nx_init.h"
 
 namespace Nx

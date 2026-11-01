@@ -1,7 +1,7 @@
 // ghttpmfcDlg.cpp : implementation file
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "ghttpmfc.h"
 #include "ghttpmfcDlg.h"
 

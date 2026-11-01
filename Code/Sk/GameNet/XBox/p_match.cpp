@@ -22,9 +22,9 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
-#include <sk/gamenet/gamenet.h>
-#include <GameNet/Xbox/p_match.h>
+#include <Core/Defines.h>
+#include <Sk/GameNet/GameNet.h>
+#include <GameNet/XBox/p_match.h>
 
 /*****************************************************************************
 **								DBG Information								**

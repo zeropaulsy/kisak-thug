@@ -4,8 +4,8 @@
 #ifndef	__GFX_P_NX_FONT_H__
 #define	__GFX_P_NX_FONT_H__
 
-#include 	"gfx/nxfont.h"
-#include 	"gfx/xbox/nx/chars.h"
+#include 	"Gfx/NxFont.h"
+#include 	"Gfx/XBox/NX/chars.h"
 
 namespace Nx
 {

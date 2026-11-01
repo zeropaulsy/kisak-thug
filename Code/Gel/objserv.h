@@ -25,10 +25,10 @@
 *****************************************************************************/
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
-#include <core/task.h>
-#include <core/list.h>
+#include <Core/Task.h>
+#include <Core/List.h>
 
 /*****************************************************************************
 **								   Defines									**

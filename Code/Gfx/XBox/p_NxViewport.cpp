@@ -2,7 +2,7 @@
 // p_NxViewport.cpp
 
 #include 	"Gfx/NxViewMan.h"
-#include 	"Gfx/Xbox/p_NxViewport.h"
+#include 	"Gfx/XBox/p_NxViewport.h"
 
 namespace Nx
 {

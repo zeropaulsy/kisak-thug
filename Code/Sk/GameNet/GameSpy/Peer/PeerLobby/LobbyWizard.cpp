@@ -1,7 +1,7 @@
 // LobbyWizard.cpp : implementation file
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "PeerLobby.h"
 #include "LobbyWizard.h"
 #include "GroupPage.h"

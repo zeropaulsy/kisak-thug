@@ -23,9 +23,9 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/list/node.h>
-#include <core/list/head.h>
-#include <core/list/search.h>
+#include <Core/List/Node.h>
+#include <Core/List/Head.h>
+#include <Core/List/Search.h>
 
 /*****************************************************************************
 **								   Defines									**

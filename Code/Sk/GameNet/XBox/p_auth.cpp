@@ -22,14 +22,14 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
-#include <sys/McMan.h>
-#include <gel/mainloop.h>
-#include <gel/scripting/script.h>
-#include <sk/gamenet/gamenet.h>
-#include <GameNet/Xbox/p_auth.h>
-#include <GameNet/Xbox/p_buddy.h>
-#include <GameNet/Xbox/p_voice.h>
+#include <Core/Defines.h>
+#include <Sys/McMan.h>
+#include <Gel/mainloop.h>
+#include <Gel/Scripting/script.h>
+#include <Sk/GameNet/GameNet.h>
+#include <GameNet/XBox/p_auth.h>
+#include <GameNet/XBox/p_buddy.h>
+#include <GameNet/XBox/p_voice.h>
 
 /*****************************************************************************
 **								DBG Information								**

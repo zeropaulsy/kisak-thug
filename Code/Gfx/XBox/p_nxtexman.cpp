@@ -2,11 +2,11 @@
 // p_NxTexMan.cpp - Xbox platform specific interface to CTexMan
 //
 
-#include <core/defines.h>
+#include <Core/Defines.h>
 
-#include "gfx/NxTexMan.h"
-#include "gfx/xbox/p_NxTexture.h"
-#include "gfx/xbox/nx/texture.h"
+#include "Gfx/NxTexMan.h"
+#include "Gfx/XBox/p_nxtexture.h"
+#include "Gfx/XBox/NX/texture.h"
 
 namespace	Nx
 {

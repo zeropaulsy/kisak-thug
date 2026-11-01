@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // p_NxWin2D.cpp
 
-#include 	"Gfx/Xbox/p_NxWin2D.h"
+#include 	"Gfx/XBox/p_NxWin2D.h"
 
 namespace Nx
 {

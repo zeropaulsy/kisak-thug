@@ -8,8 +8,8 @@
 #ifndef	__GFX_P_NX_MODEL_H__
 #define	__GFX_P_NX_MODEL_H__
     
-#include "gfx/nxmodel.h"
-#include "gfx/xbox/nx/instance.h"
+#include "Gfx/NxModel.h"
+#include "Gfx/XBox/NX/instance.h"
                    
 namespace Nx
 {

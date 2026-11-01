@@ -1,7 +1,7 @@
 ﻿#ifndef __NX_INIT_H
 #define __NX_INIT_H
 
-#include <core/defines.h>
+#include <Core/Defines.h>
 //#include <xgmath.h>
 
 namespace NxXbox

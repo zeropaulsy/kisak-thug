@@ -23,18 +23,18 @@
 //  - remove these comments
 //  - add comments specfic to the component, explaining its usage
 
-#include <gel/components/weaponcomponent.h>
-#include <gel/components/pedlogiccomponent.h>
+#include <Gel/Components/weaponcomponent.h>
+#include <Gel/Components/PedLogicComponent.h>
 
-#include <gel/object/compositeobjectmanager.h>
-#include <gel/object/compositeobject.h>
+#include <Gel/Object/compositeobjectmanager.h>
+#include <Gel/Object/compositeobject.h>
 
-#include <gel/scripting/checksum.h>
-#include <gel/scripting/script.h>
-#include <gel/scripting/struct.h>
-#include <gel/scripting/symboltable.h>
+#include <Gel/Scripting/checksum.h>
+#include <Gel/Scripting/script.h>
+#include <Gel/Scripting/struct.h>
+#include <Gel/Scripting/symboltable.h>
 
-#include <sk/engine/feeler.h>
+#include <Sk/Engine/feeler.h>
 
 
 namespace Obj

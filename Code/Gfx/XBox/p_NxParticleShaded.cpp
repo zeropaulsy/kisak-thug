@@ -1,6 +1,6 @@
-#include <core/defines.h>
-#include <gfx/xbox/nx/render.h>
-#include "gfx/xbox/p_NxParticleShaded.h"
+#include <Core/Defines.h>
+#include <Gfx/XBox/NX/render.h>
+#include "Gfx/XBox/p_NxParticleShaded.h"
 
 extern DWORD PixelShader0;
 

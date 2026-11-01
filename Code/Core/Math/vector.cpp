@@ -23,15 +23,15 @@
 *****************************************************************************/
 
 
-#include <core/allmath.h>
-#include <core/defines.h>
-#include <core/math/math.h>
-#include <core/math/vector.h>
-#include <core/math/matrix.h>
-#include <core/macros.h>
+#include <Core/allmath.h>
+#include <Core/Defines.h>
+#include <Core/Math/math.h>
+#include <Core/Math/vector.h>
+#include <Core/Math/matrix.h>
+#include <Core/macros.h>
 
-#include <core/math/quat.h>
-#include <core/math/vector.inl>
+#include <Core/Math/quat.h>
+#include <Core/Math/vector.inl>
 
 
 /*****************************************************************************

@@ -24,11 +24,11 @@
 *****************************************************************************/
 
 #include <xtl.h>
-#include <core/macros.h>
-#include <core/defines.h>
-#include <core/allmath.h>
-#include <sys/file/xbox/hed.h>
-#include <gel/soundfx/soundfx.h>
+#include <Core/macros.h>
+#include <Core/Defines.h>
+#include <Core/allmath.h>
+#include <Sys/File/XBox/hed.h>
+#include <Gel/SoundFX/soundfx.h>
 
 #include "p_music.h"
 #include "p_soundtrack.h"

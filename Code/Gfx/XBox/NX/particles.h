@@ -2,7 +2,7 @@
 #ifndef	__PARTICLE_H__
 #define	__PARTICLE_H__
 
-#include "gfx\xbox\nx\scene.h"
+#include "Gfx/XBox/NX/scene.h"
 
 namespace NxXbox
 {

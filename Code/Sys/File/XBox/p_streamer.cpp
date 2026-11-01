@@ -1,5 +1,5 @@
-#include <core/defines.h>
-#include <core/crc.h>
+#include <Core/Defines.h>
+#include <Core/crc.h>
 #include "p_streamer.h"
 
 

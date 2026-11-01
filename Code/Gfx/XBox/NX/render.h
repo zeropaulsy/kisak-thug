@@ -2,9 +2,9 @@
 #define __RENDER_H
 
 #include <xgmath.h>
-#include <core/allmath.h>
-#include <core/math/geometry.h>
-#include <gfx/xbox/p_nxmodel.h>
+#include <Core/allmath.h>
+#include <Core/Math/geometry.h>
+#include <Gfx/XBox/p_NxModel.h>
 #include "mesh.h"
 
 #define		RS_ZWRITEENABLE			1

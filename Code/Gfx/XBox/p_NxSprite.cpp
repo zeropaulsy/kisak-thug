@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // p_NxSprite.cpp
 
-#include 	"Gfx/xbox/p_NxSprite.h"
-#include 	"Gfx/xbox/p_NxTexture.h"
+#include 	"Gfx/XBox/p_NxSprite.h"
+#include 	"Gfx/XBox/p_nxtexture.h"
 
 namespace Nx
 {

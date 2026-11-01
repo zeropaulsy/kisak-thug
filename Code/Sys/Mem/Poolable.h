@@ -7,8 +7,8 @@
 #ifndef __SYS_MEM_POOLABLE_H
 #define __SYS_MEM_POOLABLE_H
 
-#include <sys/mem/CompactPool.h>
-#include <sys/mem/memman.h>
+#include <Sys/Mem/CompactPool.h>
+#include <Sys/Mem/memman.h>
 
 #ifdef KISAK_ORIGINAL_ALLOCATOR
 #define DefinePoolableClass(_T)										\

@@ -22,7 +22,7 @@
 #define __CORE_LIST_LOOKUPTABLE_H
 
 #ifndef __CORE_CRC_H
-#include <core/crc.h>
+#include <Core/crc.h>
 #endif
 
 /*****************************************************************************

@@ -25,9 +25,9 @@
 *****************************************************************************/
 		
 //#include <xtl.h>
-#include <core/allmath.h>
-#include <gfx/NxTexMan.h>
-#include <gfx/DX9/p_nxtexture.h>
+#include <Core/allmath.h>
+#include <Gfx/NxTexMan.h>
+#include <Gfx/DX9/p_nxtexture.h>
 #include "render.h"
 #include "particles.h"
 

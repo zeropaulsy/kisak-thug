@@ -1,13 +1,13 @@
 ///////////////////////////////////////////////////////////////////////////////
 // p_NxSector.cpp
 
-#include	<sys/file/filesys.h>
+#include	<Sys/File/filesys.h>
 
-#include 	"gfx/DX9/p_NxSector.h"
-#include 	"gfx/DX9/p_NxGeom.h"
-#include 	"gfx/NxMiscFX.h"
-#include 	"gfx/DX9/nx/grass.h"
-#include 	"gfx/DX9/nx/billboard.h"
+#include 	"Gfx/DX9/p_nxsector.h"
+#include 	"Gfx/DX9/p_NxGeom.h"
+#include 	"Gfx/NxMiscFX.h"
+#include 	"Gfx/DX9/NX/grass.h"
+#include 	"Gfx/DX9/NX/billboard.h"
 
 namespace Nx
 {

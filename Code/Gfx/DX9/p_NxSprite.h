@@ -5,8 +5,8 @@
 #define	__GFX_P_NX_SPRITE_H__
 
 #include 	"Gfx/NxSprite.h"
-#include 	"gfx/DX9/NX/texture.h"
-#include 	"gfx/DX9/NX/sprite.h"
+#include 	"Gfx/DX9/NX/texture.h"
+#include 	"Gfx/DX9/NX/sprite.h"
 
 namespace Nx
 {

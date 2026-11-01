@@ -8,12 +8,12 @@
 #ifndef __COMPONENTS_SUSPENDCOMPONENT_H__
 #define __COMPONENTS_SUSPENDCOMPONENT_H__
 
-#include <core/defines.h>
-#include <core/support.h>
-#include <core/singleton.h>
-#include <core/task.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
+#include <Core/singleton.h>
+#include <Core/Task.h>
 
-#include <gel/object/basecomponent.h>
+#include <Gel/Object/basecomponent.h>
 
 #define		CRC_SUSPEND CRCD(0xce0ca665,"Suspend")
 #define		GetSuspendComponent() ((Obj::CSuspendComponent*)GetComponent(CRC_SUSPEND))

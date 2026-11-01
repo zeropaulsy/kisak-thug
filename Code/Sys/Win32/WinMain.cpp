@@ -1,6 +1,6 @@
 // LWSS: Created File for Win32 WinMain() and other related Windows Functionality
 
-#include <core/defines.h>	
+#include <Core/Defines.h>	
 
 #include <Gfx/nx.h>
 

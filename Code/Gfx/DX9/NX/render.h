@@ -2,9 +2,9 @@
 #define __RENDER_H
 
 //#include <xgmath.h> // lwss: Xbox only
-#include <core/allmath.h>
-#include <core/math/geometry.h>
-#include <gfx/DX9/p_nxmodel.h>
+#include <Core/allmath.h>
+#include <Core/Math/geometry.h>
+#include <Gfx/DX9/p_NxModel.h>
 #include "mesh.h"
 
 // LWSS: Increased to +1000. So I can error check in case D3D codes get passed in by mistake.

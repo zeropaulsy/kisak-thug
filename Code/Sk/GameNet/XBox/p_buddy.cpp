@@ -22,10 +22,10 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
-#include <gel/mainloop.h>
+#include <Core/Defines.h>
+#include <Gel/mainloop.h>
 #include <GameNet/GameNet.h>
-#include <GameNet/Xbox/p_buddy.h>
+#include <GameNet/XBox/p_buddy.h>
 
 /*****************************************************************************
 **								DBG Information								**

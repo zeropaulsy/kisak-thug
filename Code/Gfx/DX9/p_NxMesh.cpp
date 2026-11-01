@@ -5,15 +5,15 @@
 //* CREATION DATE:  2/15/2002
 //****************************************************************************
 
-#include <core/defines.h>
-#include <core/string/stringutils.h>
-#include <sys/file/filesys.h>
-#include <gfx/nx.h>
-#include <gfx/nxtexman.h>
-#include <gfx/DX9/p_nxmesh.h>
-#include <gfx/DX9/p_nxscene.h>
-#include <gfx/DX9/nx/scene.h>
-#include <gfx/DX9/nx/texture.h>
+#include <Core/Defines.h>
+#include <Core/String/stringutils.h>
+#include <Sys/File/filesys.h>
+#include <Gfx/nx.h>
+#include <Gfx/NxTexMan.h>
+#include <Gfx/DX9/p_NxMesh.h>
+#include <Gfx/DX9/p_nxscene.h>
+#include <Gfx/DX9/NX/scene.h>
+#include <Gfx/DX9/NX/texture.h>
 
 //extern Nx::CXboxScene *p_skater;
 

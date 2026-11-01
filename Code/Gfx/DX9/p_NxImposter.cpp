@@ -1,11 +1,11 @@
 ///////////////////////////////////////////////////////////////////////////////
 // p_NxImposter.cpp
 
-#include 	"sys/timer.h"
-#include 	"gfx/DX9/p_NxGeom.h"
-#include 	"gfx/DX9/p_NxImposter.h"
-#include 	"gfx/DX9/nx/nx_init.h"
-#include 	"gfx/DX9/nx/render.h"
+#include 	"Sys/timer.h"
+#include 	"Gfx/DX9/p_NxGeom.h"
+#include 	"Gfx/DX9/p_NxImposter.h"
+#include 	"Gfx/DX9/NX/nx_init.h"
+#include 	"Gfx/DX9/NX/render.h"
 
 namespace Nx
 {

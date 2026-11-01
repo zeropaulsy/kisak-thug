@@ -23,10 +23,10 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
-#include <core/allmath.h>
+#include <Core/Defines.h>
+#include <Core/allmath.h>
 
-#include <gel/collision/collision.h>
+#include <Gel/Collision/Collision.h>
 
 /*****************************************************************************
 **							Class Definitions								**

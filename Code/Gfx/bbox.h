@@ -25,13 +25,13 @@
 
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
-#include <core/support.h>
-#include <core/math/vector.h>
+#include <Core/support.h>
+#include <Core/Math/vector.h>
 
 #ifdef __PLAT_NGC__
-#include "sys/ngc/p_camera.h"
+#include "Sys/ngc/p_camera.h"
 #endif
 
 /*****************************************************************************

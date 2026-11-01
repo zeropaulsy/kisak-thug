@@ -8,9 +8,9 @@
 #ifndef	__GFX_P_NX_GEOM_H__
 #define	__GFX_P_NX_GEOM_H__
     
-#include "gfx/nxgeom.h"
-#include "gfx/DX9/p_nxsector.h"
-#include "gfx/DX9/p_nxmesh.h"
+#include "Gfx/NxGeom.h"
+#include "Gfx/DX9/p_nxsector.h"
+#include "Gfx/DX9/p_NxMesh.h"
 
 namespace Mth
 {

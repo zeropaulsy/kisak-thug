@@ -5,11 +5,11 @@
 #define	__GEL_ASSET_H__
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
 
-#include <gel/assman/assettypes.h>
-#include <core/string/cstring.h>
+#include <Gel/AssMan/assettypes.h>
+#include <Core/String/CString.h>
 
 namespace Script
 {

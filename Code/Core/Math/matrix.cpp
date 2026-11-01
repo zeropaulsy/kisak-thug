@@ -23,8 +23,8 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
-#include <core/allmath.h>
+#include <Core/Defines.h>
+#include <Core/allmath.h>
 
 /*****************************************************************************
 **							  DBG Information								**

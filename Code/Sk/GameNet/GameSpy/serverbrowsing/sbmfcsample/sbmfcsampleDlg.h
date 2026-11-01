@@ -12,9 +12,9 @@
 // CSbmfcsampleDlg dialog
 
 //SB - header
-#include "..\sb_serverbrowsing.h"
-#include "..\..\qr2\qr2regkeys.h"
-#include "..\..\common\gsAvailable.h"
+#include "../sb_serverbrowsing.h"
+#include "../../qr2/qr2regkeys.h"
+#include "../../common/gsAvailable.h"
 
 class CSbmfcsampleDlg : public CDialog
 {

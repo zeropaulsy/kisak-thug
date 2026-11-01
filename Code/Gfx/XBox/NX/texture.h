@@ -1,7 +1,7 @@
 #ifndef __TEXTURE_H
 #define __TEXTURE_H
 
-#include <core/HashTable.h>
+#include <Core/HashTable.h>
 
 namespace NxXbox
 {

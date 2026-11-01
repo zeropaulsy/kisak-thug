@@ -23,10 +23,10 @@
 *****************************************************************************/
 
 //#include <xtl.h>
-#include <core/defines.h>
-#include <core/singleton.h>
+#include <Core/Defines.h>
+#include <Core/singleton.h>
 
-#include <sys/mcman.h>
+#include <Sys/McMan.h>
 
 /*****************************************************************************
 **								DBG Information								**

@@ -5,20 +5,20 @@
 //* CREATION DATE:  3/27/2002
 //****************************************************************************
 
-#include <core/defines.h>
-#include "gfx/xbox/nx/nx_init.h"
-#include "gfx/xbox/p_nxparticle.h"
-#include "gfx/xbox/p_nxparticleline.h"
-#include "gfx/xbox/p_nxparticleflat.h"
-#include "gfx/xbox/p_nxparticleshaded.h"
-#include "gfx/xbox/p_nxparticlesmooth.h"
-#include "gfx/xbox/p_nxparticleglow.h"
-#include "gfx/xbox/p_nxparticlestar.h"
-#include "gfx/xbox/p_nxparticlesmoothstar.h"
-#include "gfx/xbox/p_nxparticleribbon.h"
-#include "gfx/xbox/p_nxparticlesmoothribbon.h"
-#include "gfx/xbox/p_nxparticleribbontrail.h"
-#include "gfx/xbox/p_nxparticleglowribbontrail.h"
+#include <Core/Defines.h>
+#include "Gfx/XBox/NX/nx_init.h"
+#include "Gfx/XBox/p_nxparticle.h"
+#include "Gfx/XBox/p_nxparticleline.h"
+#include "Gfx/XBox/p_nxparticleflat.h"
+#include "Gfx/XBox/p_NxParticleShaded.h"
+#include "Gfx/XBox/p_nxparticlesmooth.h"
+#include "Gfx/XBox/p_nxparticleglow.h"
+#include "Gfx/XBox/p_NxParticleStar.h"
+#include "Gfx/XBox/p_nxparticlesmoothstar.h"
+#include "Gfx/XBox/p_nxparticleribbon.h"
+#include "Gfx/XBox/p_nxparticlesmoothribbon.h"
+#include "Gfx/XBox/p_NxParticleRibbonTrail.h"
+#include "Gfx/XBox/p_nxparticleglowribbontrail.h"
 
 namespace Nx
 {

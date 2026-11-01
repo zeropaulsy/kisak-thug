@@ -8,13 +8,13 @@
 #ifndef __COMPONENTS_SKATERSTATEHISTORYCOMPONENT_H__
 #define __COMPONENTS_SKATERSTATEHISTORYCOMPONENT_H__
 
-#include <core/defines.h>
-#include <core/support.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
 
-#include <gel/object/basecomponent.h>
+#include <Gel/Object/basecomponent.h>
 
-#include <sk/objects/skater.h>
-#include <gfx/nxflags.h>
+#include <Sk/Objects/skater.h>
+#include <Gfx/nxflags.h>
 
 #define		CRC_SKATERSTATEHISTORY CRCD(0x18223fd6, "SkaterStateHistory")
 

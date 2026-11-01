@@ -24,11 +24,11 @@
 *****************************************************************************/
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
 
 #ifndef __CORE_MATH_VECTOR_H
-#include <core/math/vector.h>
+#include <Core/Math/vector.h>
 #endif
 
 //#include <sys/timer.h>

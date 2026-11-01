@@ -1,12 +1,12 @@
-#include <core/defines.h>
-#include <core/debug.h>
-#include <core/HashTable.h>
+#include <Core/Defines.h>
+#include <Core/Debug.h>
+#include <Core/HashTable.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <xgraphics.h>
 #include <xgmath.h>
-#include <gfx\xbox\p_nxgeom.h>
-#include <sys\timer.h>
+#include <Gfx/XBox/p_NxGeom.h>
+#include <Sys/timer.h>
 #include "nx_init.h"
 #include "scene.h"
 #include "render.h"

@@ -27,42 +27,42 @@
 	Oh, yeah, just one more thing:  yo mamma, yo pappa, yo greasy bald gradma!
 */
 
-#include <core/defines.h>
-#include <core/macros.h>
-#include <core/singleton.h>
-#include <core/allmath.h>
+#include <Core/Defines.h>
+#include <Core/macros.h>
+#include <Core/singleton.h>
+#include <Core/allmath.h>
 
-#include <sys/timer.h>
-#include <sys/config/config.h>
+#include <Sys/timer.h>
+#include <Sys/Config/config.h>
 
-#include <gel/scripting/script.h>
-#include <gel/scripting/symboltable.h>
-#include <gel/scripting/checksum.h>
+#include <Gel/Scripting/script.h>
+#include <Gel/Scripting/symboltable.h>
+#include <Gel/Scripting/checksum.h>
 
-#include <gel/soundfx/soundfx.h>
-#include <gel/music/music.h>
-#include <gel/components/streamcomponent.h>
+#include <Gel/SoundFX/soundfx.h>
+#include <Gel/Music/music.h>
+#include <Gel/Components/StreamComponent.h>
 
-#include <sk/modules/skate/skate.h>
-#include <sk/modules/skate/gamemode.h>
+#include <Sk/Modules/Skate/skate.h>
+#include <Sk/Modules/Skate/GameMode.h>
 
-#include <gfx/debuggfx.h>
+#include <Gfx/debuggfx.h>
 
 #ifdef __PLAT_NGPS__
-#include <gel/music/ngps/p_music.h>
-#include <gel/music/ngps/pcm/pcm.h>
+#include <Gel/Music/Ngps/p_music.h>
+#include <Gel/Music/Ngps/Pcm/pcm.h>
 #elif defined( __PLAT_XBOX__ )
-#include <gel/music/xbox/p_music.h>
-#include <gel/music/xbox/p_soundtrack.h>
+#include <Gel/Music/Xbox/p_music.h>
+#include <Gel/Music/Xbox/p_soundtrack.h>
 #elif defined( __PLAT_NGC__ )
-#include <gel/music/ngc/p_music.h>
-#include <gel/music/ngc/pcm/pcm.h>
+#include <Gel/Music/ngc/p_music.h>
+#include <Gel/Music/ngc/pcm/pcm.h>
 #elif defined( __PLAT_WN32__ )
 #include <Gel/Music/Win32/p_music.h>
 #endif
-#include <sys/config/config.h>
-#include <sys/replay/replay.h>
-#include <sys/file/asyncfilesys.h>
+#include <Sys/Config/config.h>
+#include <Sys/Replay/replay.h>
+#include <Sys/File/AsyncFilesys.h>
 
 #define TEST_FROM_CD 0
 #define WAIT_AFTER_STOP_STREAM		0		// Set to 1 if we need to wait for stream to clear after stopping a stream

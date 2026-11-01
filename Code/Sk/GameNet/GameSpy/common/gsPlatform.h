@@ -204,7 +204,7 @@
 	#include <sys/select.h>
 	#include <sys/socket.h>
 	#include <sys/sys_time.h>
-	#include <sys/timer.h>
+	#include <Sys/timer.h>
 	#include <errno.h>
 	#include <netdb.h>
 	#include <netinet/in.h>

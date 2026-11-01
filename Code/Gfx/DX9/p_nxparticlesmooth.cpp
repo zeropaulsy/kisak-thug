@@ -1,9 +1,9 @@
-#include <core/defines.h>
-#include "gfx/DX9/nx/render.h"
-#include <gfx/NxTexMan.h>
-#include <gfx/DX9/p_nxtexture.h>
-#include "gfx/DX9/nx/mesh.h"
-#include "gfx/DX9/p_nxparticleSmooth.h"
+#include <Core/Defines.h>
+#include "Gfx/DX9/NX/render.h"
+#include <Gfx/NxTexMan.h>
+#include <Gfx/DX9/p_nxtexture.h>
+#include "Gfx/DX9/NX/mesh.h"
+#include "Gfx/DX9/p_nxparticlesmooth.h"
 
 extern IDirect3DPixelShader9* PixelShader0;
 

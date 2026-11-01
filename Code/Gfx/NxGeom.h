@@ -9,15 +9,15 @@
 #define	__GFX_NXGEOM_H__
                    
 #ifndef __CORE_DEFINES_H
-    #include <core/defines.h>
+    #include <Core/Defines.h>
 #endif
 
 #ifndef	__CORE_ROT90_H
-    #include <core/math/rot90.h>
+    #include <Core/Math/rot90.h>
 #endif
 
 #ifdef __PLAT_NGC__
-#include "sys/ngc/p_gx.h"
+#include "Sys/ngc/p_gx.h"
 #endif		// __PLAT_NGC__
 
 namespace Mth

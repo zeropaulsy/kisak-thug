@@ -8,10 +8,10 @@
 #ifndef __COMPONENTS_BOUNCYCOMPONENT_H__
 #define __COMPONENTS_BOUNCYCOMPONENT_H__
 
-#include <core/defines.h>
-#include <core/support.h>
-#include <core/allmath.h>
-#include <gel/object/basecomponent.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
+#include <Core/allmath.h>
+#include <Gel/Object/basecomponent.h>
 
 
 #define		CRC_BOUNCY CRCD(0x69c257e9,"Bouncy")

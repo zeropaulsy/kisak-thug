@@ -1,5 +1,5 @@
-#include <core/defines.h>
-#include <sys/mem/CompactPool.h>
+#include <Core/Defines.h>
+#include <Sys/Mem/CompactPool.h>
 
 
 #ifdef __DEBUG_COMPACTPOOL__
@@ -14,7 +14,7 @@
 
 #ifdef __PLAT_NGC__
 extern bool g_mc_hack;
-#include "sys/ngc/p_buffer.h"
+#include "Sys/ngc/p_buffer.h"
 #endif		// __PLAT_NGC__
 
 namespace Mem

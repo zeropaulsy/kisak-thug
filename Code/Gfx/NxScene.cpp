@@ -1,35 +1,35 @@
 ///////////////////////////////////////////////////////////////////////////////////
 // NX.CPP - Platform independent interface to the platfrom specific engine code 
 
-#include "gfx/nx.h"
-#include "gfx/NxSector.h"
-#include "gfx/NxTexMan.h"
+#include "Gfx/nx.h"
+#include "Gfx/NxSector.h"
+#include "Gfx/NxTexMan.h"
 
-#include "core/debug.h"
+#include "Core/Debug.h"
 
-#include <gel/collision/collision.h>
-#include <gel/collision/colltridata.h>
+#include <Gel/Collision/Collision.h>
+#include <Gel/Collision/CollTriData.h>
 
 
-#include <sys/file/filesys.h>
-#include <sys/file/pip.h>
+#include <Sys/File/filesys.h>
+#include <Sys/File/pip.h>
 
-#include <gel/scripting/script.h>	   
-#include <gel/scripting/struct.h>	   
-#include <gel/scripting/symboltable.h>
-#include <gel/scripting/checksum.h>
+#include <Gel/Scripting/script.h>	   
+#include <Gel/Scripting/struct.h>	   
+#include <Gel/Scripting/symboltable.h>
+#include <Gel/Scripting/checksum.h>
 
-#include <gfx\nxgeom.h>
+#include <Gfx/NxGeom.h>
 
 #ifdef	__PLAT_NGPS__
 // For wireframe debuging mode
-#include <gfx\ngps\nx\line.h>
-#include <gfx\ngps\nx\geomnode.h>
-#include <gfx\ngps\p_nxgeom.h>
-#include <gfx\ngps\p_nxscene.h>
+#include <Gfx/NGPS/NX/line.h>
+#include <Gfx/NGPS/NX/geomnode.h>
+#include <Gfx/NGPS/p_NxGeom.h>
+#include <Gfx/NGPS/p_NxScene.h>
 #endif
 
-#include <gfx\nxweather.h>
+#include <Gfx/nxweather.h>
 
 namespace	Nx
 {

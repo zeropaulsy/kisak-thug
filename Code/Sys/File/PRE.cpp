@@ -31,26 +31,26 @@
 #ifdef	__PLAT_NGPS__
 #include <eekernel.h>
 #endif		//	__PLAT_NGPS__
-#include <core/defines.h>
+#include <Core/Defines.h>
 //#include <core/HashTable.h>
-#include <core/StringHashTable.h>
-#include <sys/File/PRE.h>
-#include <sys/file/filesys.h>
-#include <sys/file/AsyncFilesys.h>
-#include <sys/config/config.h>
+#include <Core/StringHashTable.h>
+#include <Sys/File/PRE.h>
+#include <Sys/File/filesys.h>
+#include <Sys/File/AsyncFilesys.h>
+#include <Sys/Config/config.h>
 
 // cd shared by the music streaming stuff...  ASSERT if file access attempted
 // while music is streaming:
-#include <gel/music/music.h>
+#include <Gel/Music/music.h>
 
 // script stuff
-#include <gel/scripting/struct.h> 
-#include <gel/scripting/symboltable.h>
+#include <Gel/Scripting/struct.h> 
+#include <Gel/Scripting/symboltable.h>
 
 #ifdef __PLAT_NGC__
-#include "sys/ngc/p_aram.h"
-#include "sys/ngc/p_dma.h"
-#include "sys/ngc/p_display.h"
+#include "Sys/ngc/p_aram.h"
+#include "Sys/ngc/p_dma.h"
+#include "Sys/ngc/p_display.h"
 #ifdef __NOPT_FINAL__
 #define __PRE_ARAM__
 #endif		// __NOPT_FINAL__

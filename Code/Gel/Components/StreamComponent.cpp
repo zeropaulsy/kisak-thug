@@ -23,20 +23,20 @@
 //  - remove these comments
 //  - add comments specfic to the component, explaining its usage
 
-#include <gel/components/streamcomponent.h>
+#include <Gel/Components/StreamComponent.h>
 
-#include <gel/object/compositeobject.h>
-#include <gel/scripting/checksum.h>
-#include <gel/scripting/script.h>
-#include <gel/scripting/struct.h>
+#include <Gel/Object/compositeobject.h>
+#include <Gel/Scripting/checksum.h>
+#include <Gel/Scripting/script.h>
+#include <Gel/Scripting/struct.h>
 
-#include <gel/music/music.h>
+#include <Gel/Music/music.h>
 
-#include <gfx/camera.h>
+#include <Gfx/camera.h>
 
 // TODO:  Refactor this - 
-#include <sk/objects/emitter.h>
-#include <sk/objects/proxim.h>
+#include <Sk/Objects/emitter.h>
+#include <Sk/Objects/proxim.h>
 
 
 namespace Obj

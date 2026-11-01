@@ -13,7 +13,7 @@
 *****************************************************************************/
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
 
 // for now, include skfuncs.h, so that

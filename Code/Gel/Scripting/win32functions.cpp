@@ -1,7 +1,7 @@
 #ifdef __PLAT_WN32__
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
 
 namespace Tmr

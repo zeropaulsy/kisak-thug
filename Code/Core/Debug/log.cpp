@@ -24,15 +24,15 @@
 *****************************************************************************/
 
 #include <stdio.h>
-#include <core/defines.h>
-#include <core/support.h>
-#include <core/debug.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
+#include <Core/Debug.h>
 
 
-#include <sys/config/config.h>
+#include <Sys/Config/config.h>
 
 #ifndef __PLAT_WN32__
-#include <gfx/gfxman.h>
+#include <Gfx/gfxman.h>
 #endif // __PLAT_WN32__
 
 #ifdef __PLAT_NGC__

@@ -14,7 +14,7 @@
 #include <xtl.h>
 #include <xgraphics.h>
 #include <cstdio>
-#include <sys\timer.h>
+#include <Sys/timer.h>
 
 
 

@@ -26,21 +26,21 @@
 *****************************************************************************/
 
 
-#include <gel/net/net.h>
-#include <gel/prefs/prefs.h>
-#include <gel/inpman.h>
+#include <Gel/Net/net.h>
+#include <Gel/Prefs/Prefs.h>
+#include <Gel/inpman.h>
 
-#include <gamenet/gamemsg.h>
+#include <GameNet/GameMsg.h>
 
-#include <sk/objects/skaterflags.h>
-#include <sk/modules/skate/skate.h>
+#include <Sk/Objects/skaterflags.h>
+#include <Sk/Modules/Skate/skate.h>
 
 #ifdef __PLAT_NGPS__
 //#include <cengine/goaceng.h>
 #include <ghttp/ghttp.h>
 #include <peer/peer.h>
-#include <gamenet/ngps/p_ezcommon.h>
-#include <gamenet/ngps/p_netcnfif.h>
+#include <GameNet/Ngps/p_ezcommon.h>
+#include <GameNet/Ngps/p_netcnfif.h>
 #endif
 
 /*****************************************************************************

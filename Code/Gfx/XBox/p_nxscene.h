@@ -4,8 +4,8 @@
 #ifndef	__GFX_P_NX_SCENE_H__
 #define	__GFX_P_NX_SCENE_H__
 
-#include "Gfx/Nx.h"
-#include "Gfx/xbox/nx/scene.h"
+#include "Gfx/nx.h"
+#include "Gfx/XBox/NX/scene.h"
 
 namespace Nx
 {

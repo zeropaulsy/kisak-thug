@@ -28,8 +28,8 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
-#include <gfx/NxImposter.h>
+#include <Core/Defines.h>
+#include <Gfx/NxImposter.h>
 
 namespace Nx
 {

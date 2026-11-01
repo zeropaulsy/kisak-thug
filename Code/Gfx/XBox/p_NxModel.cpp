@@ -5,19 +5,19 @@
 //* CREATION DATE:  12/21/2002
 //****************************************************************************
 
-#include <core/allmath.h>
+#include <Core/allmath.h>
 
-#include "gfx/nxmodel.h"
-#include "gfx/skeleton.h"
-#include <gfx/xbox/p_nxmesh.h>
-#include "gfx/xbox/p_nxmodel.h"
-#include "gfx/xbox/p_nxscene.h"
-#include "gfx/xbox/p_nxgeom.h"
-#include "gfx/xbox/nx/texture.h"
-#include "gfx/xbox/nx/render.h"
+#include "Gfx/NxModel.h"
+#include "Gfx/Skeleton.h"
+#include <Gfx/XBox/p_NxMesh.h>
+#include "Gfx/XBox/p_NxModel.h"
+#include "Gfx/XBox/p_nxscene.h"
+#include "Gfx/XBox/p_NxGeom.h"
+#include "Gfx/XBox/NX/texture.h"
+#include "Gfx/XBox/NX/render.h"
 			   
-#include <gel/assman/assman.h>
-#include <gel/assman/skinasset.h>
+#include <Gel/AssMan/AssMan.h>
+#include <Gel/AssMan/skinasset.h>
 
 int			test_num_bones			= 0;
 Mth::Matrix	*p_test_bone_matrices	= NULL;

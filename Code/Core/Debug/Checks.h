@@ -20,14 +20,14 @@
 #define __CORE_DEBUG_CHECKS_H
 
 #ifndef __CORE_DEBUG_LOG_H
-#include <core/log.h>
+#include <Core/log.h>
 #endif
 
 /*****************************************************************************
 **							  	  Includes									**
 *****************************************************************************/
 
-#include "signatrs.h"
+#include "Signatrs.h"
 
 #ifdef __NOPT_ASSERT__
 

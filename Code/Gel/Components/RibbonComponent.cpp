@@ -5,16 +5,16 @@
 //* CREATION DATE:  5/20/3
 //****************************************************************************
 
-#include <gel/components/ribboncomponent.h>
-#include <gel/components/skeletoncomponent.h>
+#include <Gel/Components/RibbonComponent.h>
+#include <Gel/Components/skeletoncomponent.h>
 
-#include <gel/collision/collcache.h>
-#include <gel/object/compositeobject.h>
-#include <gel/scripting/checksum.h>
-#include <gel/scripting/script.h>
-#include <gel/scripting/struct.h>
+#include <Gel/Collision/CollCache.h>
+#include <Gel/Object/compositeobject.h>
+#include <Gel/Scripting/checksum.h>
+#include <Gel/Scripting/script.h>
+#include <Gel/Scripting/struct.h>
 
-#include <sk/engine/feeler.h>
+#include <Sk/Engine/feeler.h>
 
 #define MESSAGE(a) { printf("M:%s:%i: %s\n", __FILE__ + 15, __LINE__, a); }
 #define DUMPI(a) { printf("D:%s:%i: " #a " = %i\n", __FILE__ + 15, __LINE__, a); }

@@ -23,10 +23,10 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include	"gfx\nx.h"
-#include	"gfx\NxFontMan.h"
-#include	"gfx\xbox\p_NxFont.h"
-#include 	"gfx\xbox\nx\chars.h"
+#include	"Gfx/nx.h"
+#include	"Gfx/NxFontMan.h"
+#include	"Gfx/XBox/p_nxfont.h"
+#include 	"Gfx/XBox/NX/chars.h"
 
 /*****************************************************************************
 **								DBG Information								**

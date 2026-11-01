@@ -17,14 +17,14 @@
 **	Description:	Xbox new parametric particle system						**
 *****************************************************************************/
 
-#include <core/defines.h>
+#include <Core/Defines.h>
 
-#include <gfx/xbox/p_nxnewparticle.h>
+#include <Gfx/XBox/p_nxnewparticle.h>
 
-#include <gfx/NxTexMan.h>
-#include <gfx/xbox/p_nxtexture.h>
-#include <gfx/xbox/nx/nx_init.h>
-#include <gfx/xbox/nx/render.h>
+#include <Gfx/NxTexMan.h>
+#include <Gfx/XBox/p_nxtexture.h>
+#include <Gfx/XBox/NX/nx_init.h>
+#include <Gfx/XBox/NX/render.h>
 
 
 /*****************************************************************************

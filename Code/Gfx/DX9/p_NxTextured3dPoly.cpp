@@ -1,4 +1,4 @@
-#include 	"gfx/DX9/p_NxTextured3dPoly.h"
+#include 	"Gfx/DX9/p_NxTextured3dPoly.h"
 
 namespace Nx
 {

@@ -1,7 +1,7 @@
 // GetUserInfoDlg.cpp : implementation file
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "chatty.h"
 #include "GetUserInfoDlg.h"
 

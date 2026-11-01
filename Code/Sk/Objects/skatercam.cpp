@@ -34,24 +34,24 @@ I need to clean up and comment this code, so it can be modified without fear....
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <gel/mainloop.h>
+#include <Gel/mainloop.h>
 
-#include <core/math/slerp.h>
+#include <Core/Math/slerp.h>
 
-#include <objects/skater.h>
-#include <objects/skaterflags.h>
-#include <objects/skatercam.h>
-#include <components/skatercorephysicscomponent.h>
-#include <components/skaterbalancetrickcomponent.h>
-#include <components/skaterstatecomponent.h>
-#include <gfx/nxviewman.h>
-#include <gfx/debuggfx.h>
+#include <Objects/skater.h>
+#include <Objects/skaterflags.h>
+#include <Objects/skatercam.h>
+#include <Components/SkaterCorePhysicsComponent.h>
+#include <Components/SkaterBalanceTrickComponent.h>
+#include <Components/SkaterStateComponent.h>
+#include <Gfx/NxViewMan.h>
+#include <Gfx/debuggfx.h>
 
-#include <gel/scripting/symboltable.h>
-#include <gel/scripting/struct.h>
-#include <gel/scripting/array.h>
-#include <gel/scripting/script.h>
-#include <gel/components/movablecontactcomponent.h>
+#include <Gel/Scripting/symboltable.h>
+#include <Gel/Scripting/struct.h>
+#include <Gel/Scripting/array.h>
+#include <Gel/Scripting/script.h>
+#include <Gel/Components/MovableContactComponent.h>
 
 /*****************************************************************************
 **								  Externals									**

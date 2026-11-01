@@ -25,8 +25,8 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <gfx/nxnewparticle.h>
-#include <gfx/xbox/nx/material.h>
+#include <Gfx/NxNewParticle.h>
+#include <Gfx/XBox/NX/material.h>
 
 /*****************************************************************************
 **								   Defines									**

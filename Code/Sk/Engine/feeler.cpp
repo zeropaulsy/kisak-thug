@@ -11,20 +11,20 @@
 // (See geometry.cpp for line operations)
 
 
-#include <engine/feeler.h>
+#include <Engine/feeler.h>
 
-#include <core/defines.h>
-#include <core/singleton.h>
-#include <core/allmath.h>
-#include <gfx/debuggfx.h>
-#include <core/math/geometry.h>
+#include <Core/Defines.h>
+#include <Core/singleton.h>
+#include <Core/allmath.h>
+#include <Gfx/debuggfx.h>
+#include <Core/Math/geometry.h>
 
-#include <gel/collision/collision.h>
+#include <Gel/Collision/Collision.h>
 
-#include <gel/object/compositeobject.h>
-#include <gel/modman.h>
+#include <Gel/Object/compositeobject.h>
+#include <Gel/modman.h>
 
-#include <gfx/nx.h>
+#include <Gfx/nx.h>
 
 #define PRINT_TIMES 0
 						

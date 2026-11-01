@@ -1,10 +1,10 @@
 /////////////////////////////////////////////////////////////////////////////
 // p_NxLightMan.cpp - Xbox platform specific interface to CLightManager
 
-#include <core/defines.h>
-#include "gfx/NxLightMan.h"
-#include "gfx/DX9/p_NxLight.h"
-#include "gfx/DX9/nx/nx_init.h"
+#include <Core/Defines.h>
+#include "Gfx/NxLightMan.h"
+#include "Gfx/DX9/p_NxLight.h"
+#include "Gfx/DX9/NX/nx_init.h"
 
 namespace Nx
 {

@@ -8,7 +8,7 @@
 #ifndef	__GFX_P_NX_WEATHER_H__
 #define	__GFX_P_NX_WEATHER_H__
     
-#include "gfx/nxweather.h"
+#include "Gfx/nxweather.h"
 
 namespace Nx
 {

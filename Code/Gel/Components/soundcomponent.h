@@ -8,12 +8,12 @@
 #ifndef __COMPONENTS_SOUNDCOMPONENT_H__
 #define __COMPONENTS_SOUNDCOMPONENT_H__
 
-#include <core/defines.h>
-#include <core/support.h>
-#include <core/allmath.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
+#include <Core/allmath.h>
 
-#include <gel/object/basecomponent.h>
-#include <gel/soundfx/soundfx.h>
+#include <Gel/Object/basecomponent.h>
+#include <Gel/SoundFX/soundfx.h>
 
 // Just thinking about it - a generic way of accessing the component				 
 #define		CRC_SOUND CRCD(0x7713c7b,"Sound")

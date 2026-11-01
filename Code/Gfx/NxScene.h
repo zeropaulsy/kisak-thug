@@ -5,12 +5,12 @@
 #define	__GFX_NX_SCENE_H__
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
-#include <core/hashtable.h>
+#include <Core/HashTable.h>
 
-#include <sk/engine/supersector.h>
-#include 	<gfx/image/imagebasic.h>
+#include <Sk/Engine/SuperSector.h>
+#include 	<Gfx/Image/ImageBasic.h>
 
 
 namespace Script

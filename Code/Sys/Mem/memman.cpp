@@ -34,15 +34,15 @@ extern "C"
 
 #include <malloc.h>
 #include <string.h>
-#include <core/defines.h>
-#include <core/thread.h>
-#include <core/string/stringutils.h>
+#include <Core/Defines.h>
+#include <Core/thread.h>
+#include <Core/String/stringutils.h>
 #include "memman.h"
-#include <sys\mem\region.h>
-#include <sys\config\config.h>	// for memory profiling, to see if we ahve the extra memory
+#include <Sys/Mem/region.h>
+#include <Sys/Config/config.h>	// for memory profiling, to see if we ahve the extra memory
 #include "heap.h"
 #include "alloc.h"
-#include <sys/profiler.h>
+#include <Sys/Profiler.h>
 #ifdef __PLAT_XBOX__
 #include <xtl.h>
 #endif
@@ -50,7 +50,7 @@ extern "C"
 #include <dolphin.h>
 #endif
 
-#include <sk/heap_sizes.h>
+#include <Sk/heap_sizes.h>
 
 
 #ifdef	__PLAT_NGPS__

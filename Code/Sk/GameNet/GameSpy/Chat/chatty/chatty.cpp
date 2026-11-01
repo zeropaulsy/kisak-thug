@@ -1,7 +1,7 @@
 // chatty.cpp : Defines the class behaviors for the application.
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "chatty.h"
 
 #include "MainFrm.h"

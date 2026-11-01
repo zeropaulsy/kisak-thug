@@ -5,8 +5,8 @@
 #define	__GFX_P_NX_TEXTURE_H__
 
 #include 	"Gfx/NxTexture.h"
-#include 	"Gfx/xbox/nx/texture.h"
-#include 	"Gfx/xbox/nx/material.h"
+#include 	"Gfx/XBox/NX/texture.h"
+#include 	"Gfx/XBox/NX/material.h"
 
 namespace Nx
 {

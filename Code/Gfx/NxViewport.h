@@ -24,12 +24,12 @@
 *****************************************************************************/
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
-#include <core/support.h>
-#include <core/allmath.h>
-#include <gfx/camera.h>
-#include <gel/objptr.h>
+#include <Core/support.h>
+#include <Core/allmath.h>
+#include <Gfx/camera.h>
+#include <Gel/ObjPtr.h>
 			  
 /*****************************************************************************
 **								   Defines									**

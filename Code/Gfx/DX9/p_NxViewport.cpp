@@ -2,7 +2,7 @@
 // p_NxViewport.cpp
 
 #include 	"Gfx/NxViewMan.h"
-#include 	"gfx/DX9/p_NxViewport.h"
+#include 	"Gfx/DX9/p_NxViewport.h"
 
 #include "NX/nx_init.h"
 

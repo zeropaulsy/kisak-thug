@@ -10,10 +10,10 @@
 
                            
 #ifndef __CORE_DEFINES_H
-    #include <core/defines.h>
+    #include <Core/Defines.h>
 #endif
 
-#include <core/allmath.h>
+#include <Core/allmath.h>
 
 // Forward declarations
 namespace Gfx

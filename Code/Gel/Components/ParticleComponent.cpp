@@ -23,19 +23,19 @@
 //  - remove these comments
 //  - add comments specfic to the component, explaining its usage
 
-#include <gel/components/ParticleComponent.h>
+#include <Gel/Components/ParticleComponent.h>
 
-#include <gel/object/compositeobject.h>
-#include <gel/scripting/checksum.h>
-#include <gel/scripting/script.h>
-#include <gel/scripting/struct.h>
-#include <gel/scripting/array.h>
+#include <Gel/Object/compositeobject.h>
+#include <Gel/Scripting/checksum.h>
+#include <Gel/Scripting/script.h>
+#include <Gel/Scripting/struct.h>
+#include <Gel/Scripting/array.h>
 
-#include <gfx/nx.h>
-#include <gfx/nxnewparticle.h>
-#include <gfx/nxnewparticlemgr.h>
+#include <Gfx/nx.h>
+#include <Gfx/NxNewParticle.h>
+#include <Gfx/NxNewParticleMgr.h>
 
-#include <sk/gamenet/gamenet.h>
+#include <Sk/GameNet/GameNet.h>
 
 namespace Obj
 {

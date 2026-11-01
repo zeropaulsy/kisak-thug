@@ -25,10 +25,10 @@
 		
 #include <xtl.h>
 #include <xgraphics.h>
-#include <sys/file/filesys.h>
-#include <gfx/gfxman.h>
-#include <gfx/xbox/nx/nx_init.h>
-#include <gfx/xbox/nx/gamma.h>
+#include <Sys/File/filesys.h>
+#include <Gfx/gfxman.h>
+#include <Gfx/XBox/NX/nx_init.h>
+#include <Gfx/XBox/NX/gamma.h>
 
 /*****************************************************************************
 **								DBG Information								**

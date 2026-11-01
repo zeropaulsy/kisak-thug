@@ -1,5 +1,5 @@
-#include <sys/mem/CompactPool.h>
-#include <sys/mem/Poolable.h>
+#include <Sys/Mem/CompactPool.h>
+#include <Sys/Mem/Poolable.h>
 
 namespace Mem
 {

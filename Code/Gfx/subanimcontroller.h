@@ -8,13 +8,13 @@
 #ifndef __GFX_SUBANIMCONTROLLER_H__
 #define __GFX_SUBANIMCONTROLLER_H__
 
-#include <core/defines.h>
-#include <core/support.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
 
-#include <core/allmath.h>
+#include <Core/allmath.h>
 
-#include <gfx/baseanimcontroller.h>
-#include <gfx/pose.h>
+#include <Gfx/baseanimcontroller.h>
+#include <Gfx/Pose.h>
 
 // This file contains all the custom animation controllers
 // which can be chained together by an animation channel

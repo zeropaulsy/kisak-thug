@@ -27,11 +27,11 @@
 
 #include <stdio.h>
 #include <stdarg.h>
-#include <core/defines.h>
-#include <core/debug.h>
-#include <sys/config/config.h>
-#include <sys/timer.h>
-#include <sys/mem/memman.h>
+#include <Core/Defines.h>
+#include <Core/Debug.h>
+#include <Sys/Config/config.h>
+#include <Sys/timer.h>
+#include <Sys/Mem/memman.h>
 
 #ifdef	__PLAT_NGC__
 #include <dolphin.h>

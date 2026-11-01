@@ -4,7 +4,7 @@
 //#include <xbdm.h>
 //#include <d3d8perf.h>
 
-#include "sys/config/config.h"
+#include "Sys/Config/config.h"
 #include "nx_init.h"
 #include "anim.h"
 #include "chars.h"

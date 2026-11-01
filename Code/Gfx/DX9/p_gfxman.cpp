@@ -28,10 +28,10 @@
 #include <xtl.h>
 #include <xgraphics.h>
 #endif
-#include <sys/file/filesys.h>
-#include <gfx/gfxman.h>
-#include <gfx/DX9/nx/nx_init.h>
-#include <gfx/DX9/nx/gamma.h>
+#include <Sys/File/filesys.h>
+#include <Gfx/gfxman.h>
+#include <Gfx/DX9/NX/nx_init.h>
+#include <Gfx/DX9/NX/gamma.h>
 
 /*****************************************************************************
 **								DBG Information								**

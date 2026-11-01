@@ -2,12 +2,12 @@
 #define __GFX_2D_SCREENELEMENT2_H__
 
 #ifndef __GEL_OBJECT_H
-#include <gel/object.h>
+#include <Gel/object.h>
 #endif
-#include <gel/event.h>
+#include <Gel/Event.h>
 
-#include <gfx/image/imagebasic.h>
-#include <gfx/NxViewport.h>
+#include <Gfx/Image/ImageBasic.h>
+#include <Gfx/NxViewport.h>
 
 
 namespace Front

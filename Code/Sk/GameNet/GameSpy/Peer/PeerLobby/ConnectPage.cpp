@@ -1,7 +1,7 @@
 // ConnectPage.cpp : implementation file
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "PeerLobby.h"
 #include "ConnectPage.h"
 #include "TitlePage.h"

@@ -23,7 +23,7 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
+#include <Core/Defines.h>
 #ifdef __PLAT_WN32__
 #include <math.h>
 #endif
@@ -35,11 +35,11 @@
 **							  DBG Information								**
 *****************************************************************************/
 
-#include <core/math/math.h>
+#include <Core/Math/math.h>
 
 #if DEBUGGING_REPLAY_RND
 
-#include <sys\timer.h>
+#include <Sys/timer.h>
 
 #include <string.h>
 

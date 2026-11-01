@@ -25,10 +25,10 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/macros.h>
-#include <core/allmath.h>
+#include <Core/macros.h>
+#include <Core/allmath.h>
 
-#include <gfx/nxflags.h>
+#include <Gfx/nxflags.h>
 
 namespace Script
 {

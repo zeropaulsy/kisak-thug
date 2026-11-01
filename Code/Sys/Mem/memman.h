@@ -24,11 +24,11 @@
 *****************************************************************************/
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
-#include <core/singleton.h>
-#include <core/list.h>
-#include <sys\mem\region.h>
+#include <Core/singleton.h>
+#include <Core/List.h>
+#include <Sys/Mem/region.h>
 #include "heap.h"
 #include "alloc.h"
 //#ifndef __PLAT_XBOX__

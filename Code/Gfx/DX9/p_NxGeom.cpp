@@ -6,15 +6,15 @@
 //****************************************************************************
 
 
-#include <gfx/DX9/p_nxgeom.h>
+#include <Gfx/DX9/p_NxGeom.h>
 
-#include <core/allmath.h>
+#include <Core/allmath.h>
 
-#include <gfx/skeleton.h>
-#include <gfx/DX9/p_nxmesh.h>
-#include <gfx/DX9/p_nxmodel.h>
-#include <gfx/DX9/p_nxtexture.h>
-#include <gfx/DX9/nx/instance.h>
+#include <Gfx/Skeleton.h>
+#include <Gfx/DX9/p_NxMesh.h>
+#include <Gfx/DX9/p_NxModel.h>
+#include <Gfx/DX9/p_nxtexture.h>
+#include <Gfx/DX9/NX/instance.h>
 
 // LWSS: xbox-only include
 //#include <xbdm.h>

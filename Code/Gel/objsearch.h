@@ -24,9 +24,9 @@
 *****************************************************************************/
 
 #ifndef __GEL_OBJECT_H
-#include <gel/object.h>
+#include <Gel/object.h>
 #endif
-#include <core/list.h>
+#include <Core/List.h>
 
 /*****************************************************************************
 **								   Defines									**

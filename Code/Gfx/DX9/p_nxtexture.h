@@ -5,8 +5,8 @@
 #define	__GFX_P_NX_TEXTURE_H__
 
 #include 	"Gfx/NxTexture.h"
-#include 	"gfx/DX9/nx/texture.h"
-#include 	"gfx/DX9/nx/material.h"
+#include 	"Gfx/DX9/NX/texture.h"
+#include 	"Gfx/DX9/NX/material.h"
 
 namespace Nx
 {

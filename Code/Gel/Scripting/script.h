@@ -2,28 +2,28 @@
 #define	__SCRIPTING_SCRIPT_H
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
 
 #ifndef	__SCRIPTING_SCRIPTDEFS_H
 // TODO: Remove this at some point, only necessary for the CScriptStructure define, to make everything compile.
-#include <gel/scripting/scriptdefs.h>
+#include <Gel/Scripting/scriptdefs.h>
 #endif
 
 #ifndef __SYS_TIMER_H
-#include <sys/timer.h> // For Tmr::Time
+#include <Sys/timer.h> // For Tmr::Time
 #endif
 
 #ifndef __SYS_MEM_POOLABLE_H
-#include <sys/mem/poolable.h>
+#include <Sys/Mem/Poolable.h>
 #endif
 
 #ifndef __GEL_OBJECT_H
-#include <gel/object.h>
+#include <Gel/object.h>
 #endif
 
 
-#include <gel/RefCounted.h>
+#include <Gel/RefCounted.h>
 
 
 namespace Obj

@@ -1,7 +1,7 @@
 // StagingPage.cpp : implementation file
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "PeerLobby.h"
 #include "StagingPage.h"
 #include "LobbyWizard.h"

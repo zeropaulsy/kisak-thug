@@ -1,10 +1,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 // NxWeather.cpp
 
-#include <core/defines.h>
-#include <core/singleton.h>
-#include <core/allmath.h>
-#include <gfx/NxWeather.h>
+#include <Core/Defines.h>
+#include <Core/singleton.h>
+#include <Core/allmath.h>
+#include <Gfx/nxweather.h>
 //#include <gel/scripting/struct.h>
 //#include <gel/scripting/script.h>
 //#include <sk/modules/frontend/frontend.h>

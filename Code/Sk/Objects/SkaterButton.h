@@ -3,9 +3,9 @@
 #ifndef	__SK_OBJECTS_SKATERBUTTON_H__
 #define	__SK_OBJECTS_SKATERBUTTON_H__
 
-#include <core/defines.h>
-#include <core/support.h>
-#include <sys\timer.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
+#include <Sys/timer.h>
 
 
 // A SkaterButton contains the state of a single pad button

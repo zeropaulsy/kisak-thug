@@ -24,8 +24,8 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
-#include <sys\mem\region.h>
+#include <Core/Defines.h>
+#include <Sys/Mem/region.h>
 #include "heap.h"
 #include "pool.h"
 #include "pile.h"

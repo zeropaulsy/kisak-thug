@@ -10,7 +10,7 @@
 
 #include <cell/spurs/queue.h>
 #include "spursUtilityMacros.h"
-#include "spursThreadSupportInterface.h"
+#include "spursthreadsupportinterface.h"
 
 #ifdef __SPU__
 #include <simd>

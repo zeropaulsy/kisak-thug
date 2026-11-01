@@ -2,13 +2,13 @@
 #include <Core/Defines.h>
 
 #include <string.h>
-#include <core/defines.h>
-#include <core/debug.h>
+#include <Core/Defines.h>
+#include <Core/Debug.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/file/filesys.h>
-#include <gfx/gfxman.h>
-#include "gfx/DX9/p_nxtexture.h"
+#include <Sys/File/filesys.h>
+#include <Gfx/gfxman.h>
+#include "Gfx/DX9/p_nxtexture.h"
 #include "anim_vertdefs.h"
 #include "nx_init.h"
 #include "material.h"

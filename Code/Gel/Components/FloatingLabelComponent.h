@@ -8,10 +8,10 @@
 #ifndef __COMPONENTS_FLOATINGLABELCOMPONENT_H__
 #define __COMPONENTS_FLOATINGLABELCOMPONENT_H__
 
-#include <core/defines.h>
-#include <core/support.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
 
-#include <gel/object/basecomponent.h>
+#include <Gel/Object/basecomponent.h>
 
 #define		CRC_FLOATINGLABEL CRCD(0xeada1621, "FloatingLabel")
 

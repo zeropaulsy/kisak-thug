@@ -22,17 +22,17 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
-#include <core/HashTable.h>
-#include <core/StringHashTable.h>
-#include <sys/File/PRE.h>
-#include <sys/file/filesys.h>
-#include <sys/config/config.h>
-#include <gel/music/music.h>
+#include <Core/Defines.h>
+#include <Core/HashTable.h>
+#include <Core/StringHashTable.h>
+#include <Sys/File/PRE.h>
+#include <Sys/File/filesys.h>
+#include <Sys/Config/config.h>
+#include <Gel/Music/music.h>
 
 // script stuff
-#include <gel/scripting/struct.h> 
-#include <gel/scripting/symboltable.h>
+#include <Gel/Scripting/struct.h> 
+#include <Gel/Scripting/symboltable.h>
 
 
 /*****************************************************************************

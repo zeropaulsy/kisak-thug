@@ -5,22 +5,22 @@
 //* CREATION DATE:  2/10/3
 //****************************************************************************
 
-#include <core/defines.h>
+#include <Core/Defines.h>
 #include <core/math.h>
 									 
-#include <gel/components/horsecameracomponent.h>
-#include <gel/components/horsecomponent.h>
-#include <gel/components/camerautil.h>
-#include <gel/components/pedlogiccomponent.h>
-#include <gel/components/weaponcomponent.h>
+#include <Gel/Components/HorseCameraComponent.h>
+#include <Gel/Components/HorseComponent.h>
+#include <Gel/Components/CameraUtil.h>
+#include <Gel/Components/PedLogicComponent.h>
+#include <Gel/Components/weaponcomponent.h>
 
-#include <gel/object/compositeobject.h>
-#include <gel/object/compositeobjectmanager.h>
-#include <gel/scripting/checksum.h>
-#include <gel/scripting/script.h>
-#include <gel/scripting/struct.h>
+#include <Gel/Object/compositeobject.h>
+#include <Gel/Object/compositeobjectmanager.h>
+#include <Gel/Scripting/checksum.h>
+#include <Gel/Scripting/script.h>
+#include <Gel/Scripting/struct.h>
 
-#include <gfx/NxViewMan.h>
+#include <Gfx/NxViewMan.h>
 
 
 #define MESSAGE(a) { printf("M:%s:%i: %s\n", __FILE__ + 15, __LINE__, a); }

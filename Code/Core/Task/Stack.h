@@ -23,8 +23,8 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/task/task.h>
-#include <core/task/list.h>
+#include <Core/Task/Task.h>
+#include <Core/Task/List.h>
 
 /*****************************************************************************
 **								   Defines									**

@@ -1,7 +1,7 @@
 // chattyDoc.cpp : implementation of the CChattyDoc class
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "chatty.h"
 
 #include "chattyDoc.h"

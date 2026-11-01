@@ -35,14 +35,14 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/list.h>
-#include <core/macros.h>
-#include <core/allmath.h>
+#include <Core/List.h>
+#include <Core/macros.h>
+#include <Core/allmath.h>
 
-#include <sys/timer.h>
+#include <Sys/timer.h>
 
-#include <gel/ObjPtr.h>
-#include <gel/RefCounted.h>
+#include <Gel/ObjPtr.h>
+#include <Gel/RefCounted.h>
 
 namespace Script
 {

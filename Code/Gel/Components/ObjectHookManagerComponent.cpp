@@ -22,12 +22,12 @@
 //	- Insert code as needed and remove generic comments
 //  - remove these comments
 //  - add comments specfic to the component, explaining its usage
-#include <gel/components/objecthookmanagercomponent.h>
+#include <Gel/Components/ObjectHookManagerComponent.h>
 
-#include <gel/object/compositeobject.h>
-#include <gel/scripting/struct.h>
+#include <Gel/Object/compositeobject.h>
+#include <Gel/Scripting/struct.h>
 
-#include <gel/components/nodearraycomponent.h>
+#include <Gel/Components/NodeArrayComponent.h>
 
 namespace Obj
 {

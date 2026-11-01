@@ -32,20 +32,20 @@
 #include <shlwapi.h> // lwss: yes I am that lazy
 #endif
 
-#include <core/defines.h>
-#include <core/support.h>
-#include <sys/file/filesys.h>
-#include <sys/file/AsyncFilesys.h>
-#include <sys/file/PRE.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
+#include <Sys/File/filesys.h>
+#include <Sys/File/AsyncFilesys.h>
+#include <Sys/File/PRE.h>
 #ifdef __PLAT_XBOX__
-#include <sys/file/xbox/p_streamer.h>
+#include <Sys/File/XBox/p_streamer.h>
 #endif
-#include <sys/config/config.h>
+#include <Sys/Config/config.h>
 
 #ifdef __PLAT_XBOX__
-#include <gfx/xbox/nx/nx_init.h>
+#include <Gfx/XBox/NX/nx_init.h>
 #else
-#include <gfx/DX9/nx/nx_init.h>
+#include <Gfx/DX9/NX/nx_init.h>
 #endif
 
 /*****************************************************************************

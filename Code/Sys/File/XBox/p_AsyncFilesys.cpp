@@ -6,9 +6,9 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////
 
-#include <sys/config/config.h>
+#include <Sys/Config/config.h>
 
-#include <sys/file/xbox/p_AsyncFilesys.h>
+#include <Sys/File/XBox/p_AsyncFilesys.h>
 
 namespace File
 {

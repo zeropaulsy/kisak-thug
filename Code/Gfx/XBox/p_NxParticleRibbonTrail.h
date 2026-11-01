@@ -8,7 +8,7 @@
 #ifndef	__GFX_P_NX_PARTICLERibbonTrail_H__
 #define	__GFX_P_NX_PARTICLERibbonTrail_H__
     
-#include "gfx/xbox/p_nxparticle.h"
+#include "Gfx/XBox/p_nxparticle.h"
                    
 namespace Nx
 {

@@ -6,15 +6,15 @@
 //****************************************************************************
 
 
-#include <gfx/xbox/p_nxgeom.h>
+#include <Gfx/XBox/p_NxGeom.h>
 
-#include <core/allmath.h>
+#include <Core/allmath.h>
 
-#include <gfx/skeleton.h>
-#include <gfx/xbox/p_nxmesh.h>
-#include <gfx/xbox/p_nxmodel.h>
-#include <gfx/xbox/p_nxtexture.h>
-#include <gfx/xbox/nx/instance.h>
+#include <Gfx/Skeleton.h>
+#include <Gfx/XBox/p_NxMesh.h>
+#include <Gfx/XBox/p_NxModel.h>
+#include <Gfx/XBox/p_nxtexture.h>
+#include <Gfx/XBox/NX/instance.h>
 
 #include <xbdm.h>
 

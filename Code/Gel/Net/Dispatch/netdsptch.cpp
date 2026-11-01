@@ -22,9 +22,9 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
+#include <Core/Defines.h>
 #include <string.h>
-#include <gel/net/net.h>
+#include <Gel/Net/net.h>
 
 /*****************************************************************************
 **								  Externals									**

@@ -3,16 +3,16 @@
 //
 //
 
-#include	"gfx\Nx.h"
-#include	"gfx\NxLoadScreen.h"
-#include	"gfx\DX9/p_NxTexture.h"
-#include	"gfx\DX9/p_NxSprite.h"
-#include	"gfx\DX9/NX\sprite.h"
-#include	"gfx\DX9/NX\scene.h"
-#include	"gfx\DX9/NX\render.h"
-#include	"sys\config\config.h"
+#include	"Gfx/nx.h"
+#include	"Gfx/NxLoadScreen.h"
+#include	"Gfx/DX9/p_nxtexture.h"
+#include	"Gfx/DX9/p_NxSprite.h"
+#include	"Gfx/DX9/NX/sprite.h"
+#include	"Gfx/DX9/NX/scene.h"
+#include	"Gfx/DX9/NX/render.h"
+#include	"Sys/Config/config.h"
 
-#include	"core\macros.h"
+#include	"Core/macros.h"
 
 #include "NX/nx_init.h"
 

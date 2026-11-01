@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // p_NxFont.cpp
 
-#include 	"gfx/xbox/p_nxfont.h"
-#include 	"sys/config/config.h"
+#include 	"Gfx/XBox/p_nxfont.h"
+#include 	"Sys/Config/config.h"
 
 namespace Nx
 {

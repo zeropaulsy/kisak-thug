@@ -19,7 +19,7 @@ subject to the following restrictions:
 #ifdef USE_SAMPLE_PROCESS
 
 
-#include "spursThreadSupportInterface.h"
+#include "spursthreadsupportinterface.h"
 
 //#include "SPUAssert.h"
 #include <string.h>

@@ -5,17 +5,17 @@
 //* CREATION DATE:  2/15/2002
 //****************************************************************************
 
-#include <gfx/nx.h>
-#include <gfx/nxmesh.h>
-#include <gfx/nxhierarchy.h>
+#include <Gfx/nx.h>
+#include <Gfx/NxMesh.h>
+#include <Gfx/NxHierarchy.h>
 
-#include <gel/collision/collision.h>
-#include <gel/collision/colltridata.h>
+#include <Gel/Collision/Collision.h>
+#include <Gel/Collision/CollTriData.h>
 
-#include <sys/file/pip.h>
+#include <Sys/File/pip.h>
 
 #ifdef __PLAT_NGC__
-#include <gfx/ngc/p_nxmesh.h>
+#include <Gfx/NGC/p_NxMesh.h>
 #endif		// __PLAT_NGC__
 
 namespace Nx

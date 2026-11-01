@@ -12,9 +12,9 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
+#include <Core/Defines.h>
 
-#include <core/allmath.h>
+#include <Core/allmath.h>
 
 /*****************************************************************************
 **								   Defines									**

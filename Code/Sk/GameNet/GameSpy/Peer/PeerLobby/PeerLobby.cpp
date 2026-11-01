@@ -1,7 +1,7 @@
 // PeerLobby.cpp : Defines the class behaviors for the application.
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "PeerLobby.h"
 #include "ConnectPage.h"
 #include "TitlePage.h"

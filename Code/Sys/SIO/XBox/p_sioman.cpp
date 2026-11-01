@@ -25,16 +25,16 @@
 
 #include <xtl.h>
 
-#include <core/defines.h>
+#include <Core/Defines.h>
 
-#include <sys/sioman.h>
-#include <sys/siodev.h>
-#include <sys/sio/keyboard.h>
+#include <Sys/sioman.h>
+#include <Sys/siodev.h>
+#include <Sys/SIO/keyboard.h>
 
-#include <gel/module.h>
-#include <gel/soundfx/soundfx.h>
-#include <gel/soundfx/xbox/p_sfx.h>
-#include <gel/music/music.h>
+#include <Gel/module.h>
+#include <Gel/SoundFX/soundfx.h>
+#include <Gel/SoundFX/Xbox/p_sfx.h>
+#include <Gel/Music/music.h>
 
 /*****************************************************************************
 **								DBG Information								**

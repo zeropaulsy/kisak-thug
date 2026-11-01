@@ -23,10 +23,10 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/task/task.h>
-#include <core/task/list.h>
-#include <core/task/stack.h>
-#include <core/task/hook.h>
+#include <Core/Task/Task.h>
+#include <Core/Task/List.h>
+#include <Core/Task/Stack.h>
+#include <Core/Task/Hook.h>
 
 /*****************************************************************************
 **								   Defines									**

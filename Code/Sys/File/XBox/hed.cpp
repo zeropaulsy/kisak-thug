@@ -5,13 +5,13 @@
 #include <string.h>
 #include <ctype.h>
 
-#include <core/macros.h>
-#include <core/defines.h>
+#include <Core/macros.h>
+#include <Core/Defines.h>
 
-#include <gel/scripting/script.h> 
+#include <Gel/Scripting/script.h> 
 
-#include <sys/file/filesys.h>
-#include <sys/file/xbox/hed.h>
+#include <Sys/File/filesys.h>
+#include <Sys/File/XBox/hed.h>
 
 namespace File
 {

@@ -1,13 +1,13 @@
 #ifndef	__GFX_P_NX_SECTOR_H__
 #define	__GFX_P_NX_SECTOR_H__
 
-#include 	<core\allmath.h>
-#include 	<core\math\geometry.h>
-#include 	"gfx\NxSector.h"
-#include 	"gfx\Image\ImageBasic.h"
+#include 	<Core/allmath.h>
+#include 	<Core/Math/geometry.h>
+#include 	"Gfx/NxSector.h"
+#include 	"Gfx/Image/ImageBasic.h"
 
-#include 	"gfx\xbox\p_nxscene.h"
-#include 	"gfx\xbox\nx\mesh.h"
+#include 	"Gfx/XBox/p_nxscene.h"
+#include 	"Gfx/XBox/NX/mesh.h"
 
 namespace Nx
 {

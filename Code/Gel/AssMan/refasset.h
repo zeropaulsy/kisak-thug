@@ -5,10 +5,10 @@
 #define	__GEL_REFASSET_H__
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
 
-#include <gel/assman/assettypes.h>
+#include <Gel/AssMan/assettypes.h>
 
 namespace Ass
 {

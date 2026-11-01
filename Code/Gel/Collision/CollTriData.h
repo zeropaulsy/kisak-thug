@@ -24,21 +24,21 @@
 *****************************************************************************/
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
-#include <core/allmath.h>
-#include <core/math/geometry.h>
+#include <Core/allmath.h>
+#include <Core/Math/geometry.h>
 
-#include <gfx/Image/ImageBasic.h>
+#include <Gfx/Image/ImageBasic.h>
 
-#include <gel/collision/collenums.h>
+#include <Gel/Collision/CollEnums.h>
 
 #ifdef __PLAT_NGC__
-#include <sys/ngc/p_vector.h>
-#include <sys/ngc/p_gx.h>
+#include <Sys/ngc/p_vector.h>
+#include <Sys/ngc/p_gx.h>
 #endif
 
-#include <gfx/nxscene.h>
+#include <Gfx/NxScene.h>
 
 /*****************************************************************************
 **								   Defines									**

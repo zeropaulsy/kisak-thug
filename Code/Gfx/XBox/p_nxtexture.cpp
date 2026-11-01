@@ -1,9 +1,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 // p_NxTexture.cpp
 
-#include 	"Gfx/Nx.h"
-#include 	"Gfx/xbox/p_NxTexture.h"
-#include	"sys/file/filesys.h"
+#include 	"Gfx/nx.h"
+#include 	"Gfx/XBox/p_nxtexture.h"
+#include	"Sys/File/filesys.h"
 
 namespace Nx
 {

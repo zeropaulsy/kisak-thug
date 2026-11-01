@@ -26,10 +26,10 @@
 *****************************************************************************/
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
 
-#include <gfx/image/imagebasic.h>
+#include <Gfx/Image/ImageBasic.h>
 
 
 /*****************************************************************************

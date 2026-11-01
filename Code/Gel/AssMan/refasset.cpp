@@ -7,8 +7,8 @@
 // so you can have multiple indicies to reference an asset
 
 
-#include	<gel/assman/asset.h>
-#include	<gel/assman/refasset.h>
+#include	<Gel/AssMan/asset.h>
+#include	<Gel/AssMan/refasset.h>
 
 
 namespace Ass

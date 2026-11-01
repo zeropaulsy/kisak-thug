@@ -1,5 +1,5 @@
-#include <gel/object/compositeobjectmanager.h>
-#include <gel/components/skeletoncomponent.h>
+#include <Gel/Object/compositeobjectmanager.h>
+#include <Gel/Components/skeletoncomponent.h>
 
 
 #include "verlet.h"

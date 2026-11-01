@@ -24,15 +24,15 @@
 *****************************************************************************/
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
-#include <core/list.h>
-#include <core/task.h>
-#include <core/singleton.h>
-#include <core/thread.h>
-#include <core/support/ref.h>
+#include <Core/List.h>
+#include <Core/Task.h>
+#include <Core/singleton.h>
+#include <Core/thread.h>
+#include <Core/Support/Ref.h>
 
-#include <sys/timer.h>
+#include <Sys/timer.h>
 
 #if __PLAT_NGPS__
 #include <sifrpc.h>        /* For sceSifInitRpc()                    */

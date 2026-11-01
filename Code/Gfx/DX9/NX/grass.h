@@ -6,7 +6,7 @@
 //-----------------------------------------------------------------------------
 //#include <xtl.h>
 //#include "xfvf.h"
-#include <gfx/DX9/p_nxgeom.h>
+#include <Gfx/DX9/p_NxGeom.h>
 
 #define XBFUR_MAXSLICE_LOG2 5
 #define XBFUR_MAXSLICE (1 << XBFUR_MAXSLICE_LOG2)

@@ -1,7 +1,7 @@
 #ifndef __CHARS_H
 #define __CHARS_H
 
-#include <gfx/DX9/nx/sprite.h>
+#include <Gfx/DX9/NX/sprite.h>
 
 namespace NxXbox
 {

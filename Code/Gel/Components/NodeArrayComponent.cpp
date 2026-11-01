@@ -22,11 +22,11 @@
 //	- Insert code as needed and remove generic comments
 //  - remove these comments
 //  - add comments specfic to the component, explaining its usage
-#include <gel/components/nodearraycomponent.h>
+#include <Gel/Components/NodeArrayComponent.h>
 
-#include <gel/assman/assman.h>
-#include <gel/object/compositeobject.h>
-#include <gel/scripting/struct.h>
+#include <Gel/AssMan/AssMan.h>
+#include <Gel/Object/compositeobject.h>
+#include <Gel/Scripting/struct.h>
 
 namespace Obj
 {

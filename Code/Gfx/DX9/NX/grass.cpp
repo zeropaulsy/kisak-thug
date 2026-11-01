@@ -1,9 +1,9 @@
 //#include <xtl.h>
 //#include <xgraphics.h>
-#include <core\defines.h>
-#include <core\crc.h>
-#include <sys\file\filesys.h>
-#include <gfx\DX9/p_nxtexture.h>
+#include <Core/Defines.h>
+#include <Core/crc.h>
+#include <Sys/File/filesys.h>
+#include <Gfx/DX9/p_nxtexture.h>
 #include "nx_init.h"
 #include "render.h"
 #include "grass.h"

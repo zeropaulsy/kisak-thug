@@ -23,10 +23,10 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/list.h>
-#include <core/task.h>
+#include <Core/List.h>
+#include <Core/Task.h>
 #ifndef __GEL_OBJECT_H
-#include <gel/object.h>
+#include <Gel/object.h>
 #endif
 
 /*****************************************************************************

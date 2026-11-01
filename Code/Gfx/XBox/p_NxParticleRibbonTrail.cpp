@@ -1,7 +1,7 @@
-#include <core/defines.h>
-#include <gfx/xbox/nx/render.h>
+#include <Core/Defines.h>
+#include <Gfx/XBox/NX/render.h>
 
-#include "gfx/xbox/p_nxparticleRibbonTrail.h"
+#include "Gfx/XBox/p_NxParticleRibbonTrail.h"
 
 extern DWORD PixelShader1;
 

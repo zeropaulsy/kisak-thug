@@ -29,12 +29,12 @@
 #include <dsound.h>
 //#include <dsstdfx.h>
 
-#include <core/macros.h>
-#include <sys/file/filesys.h>
-#include <gel/soundfx/soundfx.h>
-#include <gel/soundfx/xbox/p_sfx.h>
-#include <gel/soundfx/xbox/skate5fx.h>
-#include <gel/music/music.h>
+#include <Core/macros.h>
+#include <Sys/File/filesys.h>
+#include <Gel/SoundFX/soundfx.h>
+#include <Gel/SoundFX/Xbox/p_sfx.h>
+#include <Gel/SoundFX/Xbox/skate5fx.h>
+#include <Gel/Music/music.h>
 
 // LWSS Add
 #ifdef __PLAT_WN32__

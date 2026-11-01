@@ -24,11 +24,11 @@
 *****************************************************************************/
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
-#include <core/support.h>
-#include <sys\mem\region.h>
-#include <sys/mem/memdbg.h>
+#include <Core/support.h>
+#include <Sys/Mem/region.h>
+#include <Sys/Mem/memdbg.h>
 
 #ifdef KISAK_ORIGINAL_ALLOCATOR
 #ifdef __PLAT_NGC__

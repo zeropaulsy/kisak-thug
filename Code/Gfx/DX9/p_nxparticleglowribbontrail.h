@@ -1,7 +1,7 @@
 #ifndef	__GFX_P_NX_PARTICLEGlowRibbonTrail_H__
 #define	__GFX_P_NX_PARTICLEGlowRibbonTrail_H__
     
-#include "gfx/DX9/p_nxparticle.h"
+#include "Gfx/DX9/p_nxparticle.h"
                    
 namespace Nx
 {

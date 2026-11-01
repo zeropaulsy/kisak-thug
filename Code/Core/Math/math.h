@@ -26,7 +26,7 @@
 
 #ifdef __PLAT_XBOX__
 #include <math.h>		// Required for fabsf().
-#include <core\math\xbox\sse.h>
+#include <Core/Math/Xbox/sse.h>
 #endif
 
 #ifdef __PLAT_WN32__

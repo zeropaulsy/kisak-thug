@@ -1,7 +1,7 @@
 // sbmfcsampleDlg.cpp : implementation file
 //
 
-#include "stdafx.h"
+#include "StdAfx.h"
 #include "sbmfcsample.h"
 #include "sbmfcsampleDlg.h"
 

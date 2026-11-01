@@ -9,19 +9,19 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <sys/file/filelibrary.h>
+#include <Sys/File/FileLibrary.h>
 
-#include <sys/file/asyncfilesys.h>
-#include <sys/file/filesys.h>
-#include <gel/scripting/checksum.h>
-#include <gel/scripting/script.h>
+#include <Sys/File/AsyncFilesys.h>
+#include <Sys/File/filesys.h>
+#include <Gel/Scripting/checksum.h>
+#include <Gel/Scripting/script.h>
 
-#include <sys/mem/memman.h>
+#include <Sys/Mem/memman.h>
 
 #ifdef __PLAT_NGC__
-#include <gel/music/music.h>
-#include <sys/ngc/p_aram.h>
-#include <sys/ngc/p_dma.h>
+#include <Gel/Music/music.h>
+#include <Sys/ngc/p_aram.h>
+#include <Sys/ngc/p_dma.h>
 #endif		// __PLAT_NGC__
 
 /*****************************************************************************

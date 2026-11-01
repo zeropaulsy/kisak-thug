@@ -1,7 +1,7 @@
-#include <core/defines.h>
-#include "gfx/DX9/nx/render.h"
+#include <Core/Defines.h>
+#include "Gfx/DX9/NX/render.h"
 
-#include "gfx/DX9/p_nxparticleRibbon.h"
+#include "Gfx/DX9/p_nxparticleribbon.h"
 
 extern IDirect3DPixelShader9* PixelShader1;
 

@@ -26,8 +26,8 @@
 *****************************************************************************/
 #ifdef __PLAT_XBOX__
 
-#include <core/defines.h>
-#include <core/dynamictable.h>
+#include <Core/Defines.h>
+#include <Core/DynamicTable.h>
 #include <Xbox.h>
 #include <XOnline.h>
 

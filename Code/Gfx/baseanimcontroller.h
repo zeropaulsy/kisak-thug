@@ -8,11 +8,11 @@
 #ifndef __GFX_BASEANIMCONTROLLER_H__
 #define __GFX_BASEANIMCONTROLLER_H__
 
-#include <core/defines.h>
-#include <core/support.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
 
 // for procedural bones, which will be moved to another file...
-#include <core/allmath.h>
+#include <Core/allmath.h>
 
 namespace Obj
 {

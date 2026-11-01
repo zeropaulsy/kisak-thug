@@ -12,15 +12,15 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/defines.h>
-#include <core/support.h>
-#include <core/allmath.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
+#include <Core/allmath.h>
 
-#include <core/string/cstring.h>
+#include <Core/String/CString.h>
 
-#include <sys/file/AsyncFilesys.h>
+#include <Sys/File/AsyncFilesys.h>
 
-#include <gfx/customanimkey.h>
+#include <Gfx/CustomAnimKey.h>
 
 /*****************************************************************************
 **								   Defines									**

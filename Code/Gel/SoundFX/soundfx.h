@@ -23,17 +23,17 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/list.h>
-#include <core/macros.h>
-#include <core/allmath.h>
-#include <sys/timer.h>
+#include <Core/List.h>
+#include <Core/macros.h>
+#include <Core/allmath.h>
+#include <Sys/timer.h>
 
 #ifdef __PLAT_NGPS__
-#include <gel/soundfx/ngps/p_sfx.h>
+#include <Gel/SoundFX/NGPS/p_sfx.h>
 #elif defined( __PLAT_XBOX__ )
-#include <gel/soundfx/xbox/p_sfx.h>
+#include <Gel/SoundFX/Xbox/p_sfx.h>
 #elif defined( __PLAT_NGC__ )
-#include <gel/soundfx/ngc/p_sfx.h>
+#include <Gel/SoundFX/ngc/p_sfx.h>
 #elif defined( __PLAT_WN32__ )
 //#include <Gel/SoundFX/Win32/p_sfx.h>
 #include <Gel/SoundFX/SDL/p_sfx.h>

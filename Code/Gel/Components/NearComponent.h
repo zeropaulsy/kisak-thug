@@ -9,12 +9,12 @@
 #ifndef __COMPONENTS_NEARCOMPONENT_H__
 #define __COMPONENTS_NEARCOMPONENT_H__
 
-#include <core/defines.h>
-#include <core/support.h>
-#include <core/allmath.h>
-#include <core/math/geometry.h>
+#include <Core/Defines.h>
+#include <Core/support.h>
+#include <Core/allmath.h>
+#include <Core/Math/geometry.h>
 
-#include <gel/object/basecomponent.h>
+#include <Gel/Object/basecomponent.h>
 
 // Replace this with the CRCD of the component you are adding
 #define		CRC_NEAR							CRCD( 0x89b3e3ee, "near" )

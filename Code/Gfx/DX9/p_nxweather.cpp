@@ -5,22 +5,22 @@
 //* CREATION DATE:  6/19/2003
 //****************************************************************************
 
-#include <core/defines.h>
-#include "gfx/DX9/nx/render.h"
+#include <Core/Defines.h>
+#include "Gfx/DX9/NX/render.h"
 
-#include <gfx/NxTexMan.h>
-#include <gfx/DX9/p_nxtexture.h>
-#include "gfx/DX9/nx/mesh.h"
-#include "gfx/DX9/p_nxweather.h"
+#include <Gfx/NxTexMan.h>
+#include <Gfx/DX9/p_nxtexture.h>
+#include "Gfx/DX9/NX/mesh.h"
+#include "Gfx/DX9/p_nxweather.h"
 
-#include <sk/modules/skate/skate.h>
-#include <sk/objects/skater.h>
+#include <Sk/Modules/Skate/skate.h>
+#include <Sk/Objects/skater.h>
 
-#include <sk/engine/feeler.h>
-#include <engine/SuperSector.h>
-#include "gfx/nx.h"
+#include <Sk/Engine/feeler.h>
+#include <Engine/SuperSector.h>
+#include "Gfx/nx.h"
 
-#include "gfx/DX9/nx/sprite.h"
+#include "Gfx/DX9/NX/sprite.h"
 #include "NX/nx_init.h"
 
 #define FEELER_START			50000.0f

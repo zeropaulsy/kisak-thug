@@ -24,11 +24,11 @@
 *****************************************************************************/
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
 
-#include <core/allmath.h>
-#include <core/math/geometry.h>
+#include <Core/allmath.h>
+#include <Core/Math/geometry.h>
 
 /*****************************************************************************
 **								   Defines									**

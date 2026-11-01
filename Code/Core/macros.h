@@ -7,10 +7,10 @@
 #define __USEFUL_LITTLE_MACROS_H__
 
 #ifndef __CORE_DEFINES_H
-#include <core/defines.h>
+#include <Core/Defines.h>
 #endif
 
-#include <core/support.h>
+#include <Core/support.h>
 
 #define PERCENT_MULT			( ( 1.0f ) / 100.0f )
 #define PERCENT( x, percent )	( ( ( ( ( float )( x ) ) * ( ( float )( percent ) ) ) * PERCENT_MULT ) )
@@ -45,13 +45,13 @@
 #ifdef __PLAT_WN32__
 // Unfortunately, this has to be a platform-specific macro, since it references Xbox specific global structures to determine
 // the width and height of the back buffer.
-#include <gfx/DX9/nx/nx_init.h>
+#include <Gfx/DX9/NX/nx_init.h>
 #define		SCREEN_CONV_X( x )				((( x ) * NxXbox::EngineGlobals.screen_conv_x_multiplier ) + NxXbox::EngineGlobals.screen_conv_x_offset )
 #define		SCREEN_CONV_Y( y )				((( y ) * NxXbox::EngineGlobals.screen_conv_y_multiplier ) + NxXbox::EngineGlobals.screen_conv_y_offset )
 #elif __PLAT_XBOX__
 // Unfortunately, this has to be a platform-specific macro, since it references Xbox specific global structures to determine
 // the width and height of the back buffer.
-#include <gfx/xbox/nx/nx_init.h>
+#include <Gfx/XBox/NX/nx_init.h>
 #define		SCREEN_CONV_X( x )				((( x ) * NxXbox::EngineGlobals.screen_conv_x_multiplier ) + NxXbox::EngineGlobals.screen_conv_x_offset )
 #define		SCREEN_CONV_Y( y )				((( y ) * NxXbox::EngineGlobals.screen_conv_y_multiplier ) + NxXbox::EngineGlobals.screen_conv_y_offset )
 #else

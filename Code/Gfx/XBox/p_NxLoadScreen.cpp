@@ -3,16 +3,16 @@
 //
 //
 
-#include	"gfx\Nx.h"
-#include	"gfx\NxLoadScreen.h"
-#include	"gfx\xbox\p_NxTexture.h"
-#include	"gfx\xbox\p_NxSprite.h"
-#include	"gfx\xbox\NX\sprite.h"
-#include	"gfx\xbox\NX\scene.h"
-#include	"gfx\xbox\NX\render.h"
-#include	"sys\config\config.h"
+#include	"Gfx/nx.h"
+#include	"Gfx/NxLoadScreen.h"
+#include	"Gfx/XBox/p_nxtexture.h"
+#include	"Gfx/XBox/p_NxSprite.h"
+#include	"Gfx/XBox/NX/sprite.h"
+#include	"Gfx/XBox/NX/scene.h"
+#include	"Gfx/XBox/NX/render.h"
+#include	"Sys/Config/config.h"
 
-#include	"core\macros.h"
+#include	"Core/macros.h"
 
 namespace	Nx
 {

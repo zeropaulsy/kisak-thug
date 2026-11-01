@@ -22,9 +22,9 @@
 // depending on maxStrings.
 // (There's no function here yet for doing that, but easy to add)
 
-#include <gel/scripting/string.h>
+#include <Gel/Scripting/string.h>
 #ifndef __CORE_CRC_H
-#include <core/crc.h>
+#include <Core/crc.h>
 #endif
 
 namespace Script

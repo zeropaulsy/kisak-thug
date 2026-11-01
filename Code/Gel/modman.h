@@ -23,11 +23,11 @@
 **							  	  Includes									**
 *****************************************************************************/
 
-#include <core/support.h>
-#include <core/singleton.h>
-#include <core/list.h>
-#include <core/task.h>
-#include <gel/module.h>
+#include <Core/support.h>
+#include <Core/singleton.h>
+#include <Core/List.h>
+#include <Core/Task.h>
+#include <Gel/module.h>
 					  
 /*****************************************************************************
 **								   Defines									**

@@ -1,5 +1,5 @@
-#include <core/defines.h>
-#include <core/debug.h>
+#include <Core/Defines.h>
+#include <Core/Debug.h>
 //#include <xgraphics.h>
 #include "nx_init.h"
 #include "render.h"

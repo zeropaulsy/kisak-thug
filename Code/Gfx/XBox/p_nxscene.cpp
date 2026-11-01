@@ -1,9 +1,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 // p_NxScene.cpp
 
-#include 	"gfx/xbox/p_NxScene.h"
-#include 	"gfx/xbox/p_NxSector.h"
-#include 	"gfx/xbox/p_NxGeom.h"
+#include 	"Gfx/XBox/p_nxscene.h"
+#include 	"Gfx/XBox/p_nxsector.h"
+#include 	"Gfx/XBox/p_NxGeom.h"
 
 namespace Nx
 {
