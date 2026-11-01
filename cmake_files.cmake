@@ -26,8 +26,8 @@ set(CORE_LIST
 source_group("Core/List" FILES ${CORE_LIST})
 
 set(CORE_MATH
-	"${SRC_DIR}/Core/Math/Geometry.cpp"
-	"${SRC_DIR}/Core/Math/Geometry.h"
+	"${SRC_DIR}/Core/Math/geometry.cpp"
+	"${SRC_DIR}/Core/Math/geometry.h"
 	"${SRC_DIR}/Core/Math/math.cpp"
 	"${SRC_DIR}/Core/Math/math.h"
 	"${SRC_DIR}/Core/Math/matrix.cpp"
@@ -877,8 +877,8 @@ set(SK_GAMENET
 source_group("Sk/GameNet" FILES ${SK_GAMENET})
 
 #set(SK_GAMENET_XBOX
-#	"${SRC_DIR}/Sk/GameNet/Xbox/p_buddy.cpp"
-#	"${SRC_DIR}/Sk/GameNet/Xbox/p_buddy.h"
+#	"${SRC_DIR}/Sk/GameNet/XBox/p_buddy.cpp"
+#	"${SRC_DIR}/Sk/GameNet/XBox/p_buddy.h"
 #)
 #source_group("Sk/GameNet/Xbox" FILES ${SK_GAMENET_XBOX})
 

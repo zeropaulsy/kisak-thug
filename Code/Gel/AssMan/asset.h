@@ -19,6 +19,7 @@ namespace Script
 
 namespace Ass
 {
+class CRefAsset;
 class 	CAsset : public Spt::Class
 {
 	friend class CAssMan;

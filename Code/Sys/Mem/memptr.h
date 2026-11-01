@@ -486,7 +486,7 @@ Ptr< _T >&		Ptr< _T >::operator= ( const Ptr< _T >& rhs )
 {
 	
 	
-	m_const_ptr = rhs.Addr();
+	this->m_const_ptr = rhs.Addr();
 	return *this;	
 }
 
@@ -534,7 +534,7 @@ Ptr< _T >&		Ptr< _T >::operator= ( const _T* ptr )
 {
 	
 
-	m_const_ptr = ptr;
+	this->m_const_ptr = ptr;
 	return *this;	
 }
 
@@ -549,9 +549,9 @@ _T&		Ptr< _T >::operator * ( void ) const
 {
 	
 
-	Dbg_AssertType( m_ptr, _T );
+	Dbg_AssertType( this->m_ptr, _T );
 
-	return *m_ptr;	
+	return *this->m_ptr;	
 }
 
 /******************************************************************/
@@ -564,9 +564,9 @@ _T*		Ptr< _T >::operator -> ( void ) const
 {
 	
 	
-	Dbg_AssertType( m_ptr, _T );
+	Dbg_AssertType( this->m_ptr, _T );
 	
-	return m_ptr;	
+	return this->m_ptr;	
 }
 
 /******************************************************************/
@@ -579,7 +579,7 @@ _T*		Ptr< _T >::Addr ( void ) const
 {
 	
 
-	return m_ptr;	
+	return this->m_ptr;	
 }
 
 /******************************************************************/

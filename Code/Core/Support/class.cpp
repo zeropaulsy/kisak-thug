@@ -112,6 +112,39 @@ static inline void 	operator delete[]( void* pAddr )
 
 
 
+#ifdef __linux__
+// The global operators, out of line. GCC drops unused inline definitions, which left libstdc++ with its own
+// operator delete: strings allocated from the game's heaps were then freed into glibc's malloc. Sized delete is
+// what GCC emits for C++14 and later, so it has to reach the heaps too. MSVC needs neither.
+#include <new>
+static inline void* kisak_new( size_t size )
+{
+#ifdef KISAK_ORIGINAL_ALLOCATOR
+	return Mem::Manager::sHandle().New( size, true );
+#else
+	return malloc( size );
+#endif
+}
+static inline void kisak_delete( void* p )
+{
+#ifdef KISAK_ORIGINAL_ALLOCATOR
+	Mem::Manager::sHandle().Delete( p );
+#else
+	free( p );
+#endif
+}
+void* operator new( size_t size ) { return kisak_new( size ); }
+void* operator new[]( size_t size ) { return kisak_new( size ); }
+void* operator new( size_t size, const std::nothrow_t& ) noexcept { return kisak_new( size ); }
+void* operator new[]( size_t size, const std::nothrow_t& ) noexcept { return kisak_new( size ); }
+void operator delete( void* p ) noexcept { kisak_delete( p ); }
+void operator delete[]( void* p ) noexcept { kisak_delete( p ); }
+void operator delete( void* p, size_t ) noexcept { kisak_delete( p ); }
+void operator delete[]( void* p, size_t ) noexcept { kisak_delete( p ); }
+void operator delete( void* p, const std::nothrow_t& ) noexcept { kisak_delete( p ); }
+void operator delete[]( void* p, const std::nothrow_t& ) noexcept { kisak_delete( p ); }
+#endif // __linux__
+
 namespace Spt
 {
 

@@ -107,6 +107,10 @@ namespace Script
 
 namespace Mdl
 {
+bool ScriptSetGameType(Script::CStruct *pParams, Script::CScript *pScript);
+bool ScriptInTeamGame(Script::CStruct *pParams, Script::CScript *pScript);
+bool ScriptLaunchLevel(Script::CStruct *pParams, Script::CScript *pScript);
+bool ScriptSetTimeLimit(Script::CStruct *pParams, Script::CScript *pScript);
     class CCompetition;
     class CGameFlow;
     class CHorse;

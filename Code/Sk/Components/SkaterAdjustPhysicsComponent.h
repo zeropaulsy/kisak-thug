@@ -29,6 +29,7 @@ namespace Script
 namespace Obj
 {
 	class CSkaterCorePhysicsComponent;
+	class CSkaterNonLocalNetLogicComponent;
 	class CModelComponent;
 	class CShadowComponent;
 	class CMovableContactComponent;

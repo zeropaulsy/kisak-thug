@@ -20,6 +20,20 @@ This was initially done with an IDA-minded approach to be 1:1 as possible.
 4) Move your `Data/` Folder next to the .exe along with SDL2.dll from the SDL folder
 5) You can now run the game.
 
+### How to build (Linux)
+Linux builds the same PC code with [DXVK native](https://github.com/doitsujin/dxvk) as Direct3D 9 (on Vulkan) and SDL2 for the window, input and audio. It is 32-bit, like the Windows build. Windows-only behaviour stays in the code behind `#ifdef __linux__`, the Win32 calls go through `port/compat/`, and `port/linux.cmake` holds the build rules, so the Windows steps above are unchanged.
+
+1) Install: `cmake`, `ninja`, `g++-multilib`, `libsdl2-dev:i386`, a 32-bit Vulkan driver (`libvulkan1:i386` plus your GPU's i386 driver)
+2) `cmake -S . -B build-linux -G Ninja` (downloads DXVK into `port/third_party/`, checksum verified)
+3) `ninja -C build-linux`
+4) `port/run.sh "<folder holding your Data/>" [-w 1920 -h 1080] [-fullscreen]`
+
+Saves go to `Save/` in the game folder, as on Windows. As on Windows, a gamepad is needed: keyboard controls are still TODO.
+
+Test hooks for unattended runs: `KISAK_SHOT_EVERY=N`, `KISAK_SHOT_DIR`, `KISAK_QUIT_AT=N`, `KISAK_PAD_SCRIPT="button@first-last,..."` (see `port/compat/linux_debug.cpp`), `SDL_AUDIODRIVER=dummy`.
+
+Port notes (build rules, platform quirks, renderer, testing): `port/notes/`.
+
 ### Status
 #### Done
 - Window Handling

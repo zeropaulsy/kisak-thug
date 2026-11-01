@@ -1330,7 +1330,12 @@ const char* CEngine::s_plat_get_soundtrack_name( int soundtrack_number )
 			p_temp[0] = *p_scan++;
 				
 			char p_one_char[10];
+			#ifdef __linux__
+			p_one_char[0] = (char)p_temp[0];
+			p_one_char[1] = 0;
+#else
 			wsprintfA( p_one_char, "%ls", p_temp);
+#endif
 
 			// p_one_char now contains a one char string.
 			if( count < 99 )

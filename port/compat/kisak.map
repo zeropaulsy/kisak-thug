@@ -1,0 +1,11 @@
+/* Linker version script for the executable (port/linux.cmake; from hit-and-run-linux). The game replaces the global
+   operator new/delete with its own heaps. On Windows that only affects the .exe, but an ELF executable's definitions
+   would also replace them for every shared library (Mesa's LLVM crashed at load). Keep them local: the game's own
+   calls still bind to them. */
+{
+    local:
+        _Znwj; _Znaj; _Znwm; _Znam;
+        _ZdlPv; _ZdaPv; _ZdlPvj; _ZdaPvj;
+        _ZnwjRKSt9nothrow_t; _ZnajRKSt9nothrow_t;
+        _ZdlPvRKSt9nothrow_t; _ZdaPvRKSt9nothrow_t;
+};

@@ -9,9 +9,14 @@
 
 #include <Gfx/DX9/NX/render.h>
 
+#ifdef __linux__
+#include <SDL.h>
+#include <time.h>
+#else
 // Temporarily in here
 #include <dsound.h>
 LPDIRECTSOUND8 ppDS8;
+#endif
 //LPDIRECTINPUT8 g_directInput8 = nullptr;
 // ^^
 
@@ -39,6 +44,10 @@ BOOL __cdecl DownloadCompletionFunc(DWORD a1)
 
 void Win32_ProcessMsgPump()
 {
+#ifdef __linux__
+    // The window events are handled by linux_window_event_watch as SDL pumps them.
+    SDL_PumpEvents();
+#else
     struct tagMSG Msg; // [esp+4h] [ebp-1Ch] BYREF
 
     while (PeekMessageA(&Msg, NxXbox::EngineGlobals.hWnd, 0, 0, 1u))
@@ -46,6 +55,7 @@ void Win32_ProcessMsgPump()
         TranslateMessage(&Msg);
         DispatchMessageA(&Msg);
     }
+#endif
 }
 
 void Win32_ApplyInputs()
@@ -311,6 +321,7 @@ void D3D_RecreateRenderSurfaces()
     NxXbox::InitialiseRenderstates();
 }
 
+#ifndef __linux__
 HWND __cdecl Win32_CreateClassAndWindow(
     LPCSTR lpClassName,
     LPCSTR lpWindowName,
@@ -486,18 +497,6 @@ static void __stdcall Win32_CreateDirectSound8(HWND a1)
 //    return true;
 //}
 
-int Win32_QueryRegistryForSettings(LPCSTR lpSubKey)
-{
-    // KISAKTODO: I dont really want this in the Registry...
-    //NxXbox::EngineGlobals.g_Registry_options_flag_1_MSAA = 1;
-    NxXbox::EngineGlobals.g_Registry_options_flag_2 = 1;
-
-    NxXbox::EngineGlobals.g_Registry_distance_value = 100;
-    //NxXbox::EngineGlobals.g_Registry_resolution_setting = 3;
-
-    return 0;
-}
-
 static bool Win32_CreateDirectInput8(HINSTANCE inst, HWND hwnd, LPCSTR lpSubKey)
 {
     if (!hwnd)
@@ -537,8 +536,26 @@ static bool Win32_CreateDirectInput8(HINSTANCE inst, HWND hwnd, LPCSTR lpSubKey)
     return true;
 }
 
+#endif // !__linux__
+
+int Win32_QueryRegistryForSettings(LPCSTR lpSubKey)
+{
+    // KISAKTODO: I dont really want this in the Registry...
+    //NxXbox::EngineGlobals.g_Registry_options_flag_1_MSAA = 1;
+    NxXbox::EngineGlobals.g_Registry_options_flag_2 = 1;
+
+    NxXbox::EngineGlobals.g_Registry_distance_value = 100;
+    //NxXbox::EngineGlobals.g_Registry_resolution_setting = 3;
+
+    return 0;
+}
+
 // Defined in Sk/Main.cpp
+#ifdef __linux__
+int KisakGameMain(sint argc, char** argv); // Sk/Main.cpp's main(), renamed on Linux
+#else
 int main(sint argc, char** argv);
+#endif
 
 static void Win32_ParseDisplayArgs(int argc, char** argv)
 {
@@ -584,6 +601,70 @@ static void Win32_ParseDisplayArgs(int argc, char** argv)
     }
 }
 
+#ifdef __linux__
+// Replaces Win32_WNDPROC: runs whenever SDL pumps events, so it sees them whoever drains the queue (p_siodev.cpp does).
+static int SDLCALL linux_window_event_watch(void*, SDL_Event* e)
+{
+    if (e->type == SDL_QUIT)
+    {
+        gbQuit = true;
+    }
+    else if (e->type == SDL_WINDOWEVENT)
+    {
+        if (e->window.event == SDL_WINDOWEVENT_FOCUS_GAINED)
+        {
+            g_isWindowInFocus = true;
+        }
+        else if (e->window.event == SDL_WINDOWEVENT_FOCUS_LOST)
+        {
+            g_isWindowInFocus = false;
+            g_windowJustWentOutOfFocus = true;
+        }
+        else if (e->window.event == SDL_WINDOWEVENT_CLOSE)
+        {
+            gbQuit = true;
+        }
+    }
+    return 0;
+}
+
+int main(int argc, char** argv)
+{
+    Win32_ParseDisplayArgs(argc, argv);
+    int win_w = (NxXbox::EngineGlobals.cmdline_width  > 0) ? NxXbox::EngineGlobals.cmdline_width  : 1280;
+    int win_h = (NxXbox::EngineGlobals.cmdline_height > 0) ? NxXbox::EngineGlobals.cmdline_height : 960;
+
+    // DXVK native presents to an SDL window, which it receives as the HWND.
+    setenv("DXVK_WSI_DRIVER", "SDL2", 0);
+    if (SDL_Init(SDL_INIT_VIDEO) < 0)
+    {
+        fprintf(stderr, "SDL_Init failed: %s\n", SDL_GetError());
+        return 1;
+    }
+    SDL_Window* window = SDL_CreateWindow("Kisak Hawk's OpenGround", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+        win_w, win_h, SDL_WINDOW_VULKAN | SDL_WINDOW_SHOWN);
+    if (!window)
+    {
+        fprintf(stderr, "SDL_CreateWindow failed: %s\n", SDL_GetError());
+        return 1;
+    }
+    NxXbox::EngineGlobals.hWnd = (HWND)window;
+    g_isWindowInFocus = true;
+    SDL_AddEventWatch(linux_window_event_watch, NULL);
+    Win32_ProcessMsgPump();
+
+    srand((unsigned int)time(NULL));
+
+    Win32_QueryRegistryForSettings("");
+
+    while (!gbQuit)
+    {
+        KisakGameMain(argc, argv);
+    }
+    SDL_Quit();
+    return 0;
+}
+#else
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine, int nCmdShow)
 {
     hEvent = CreateEventA(NULL, TRUE, FALSE, 0);
@@ -640,3 +721,4 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
         //_exit(0);
     }
 }
+#endif // !__linux__

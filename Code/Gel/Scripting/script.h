@@ -143,6 +143,9 @@ struct SReturnAddress
 // There would be a slight speed hit if pools were used, but probably not much, 
 // allocating/deallocating off a pool is pretty quick.
 //#ifdef __PLAT_WN32__
+class CScript;
+CScript *GetNextScript(CScript *p_script=NULL);
+
 #if 0 // lwss undo this.
 class CScript
 #else
@@ -152,7 +155,7 @@ class CScript : public Mem::CPoolable<CScript>
 	// CScripts are linked into a list.
 	CScript *mp_next;
 	CScript *mp_previous;
-	friend CScript *GetNextScript(CScript *p_script=NULL);
+	friend CScript *GetNextScript(CScript *p_script);
 	
 	// If this CScript got setup using a SStructScript (via the SetScript member function below)
 	// then this will be a pointer to a copy of the script, and mp_pc will point somewhere into it.

@@ -32,6 +32,7 @@
 
 namespace Mdl
 {
+class Manager;
 
 
 

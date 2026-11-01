@@ -97,6 +97,7 @@ int gNumSoundtracks = 0;
 /*                                                                */
 /*                                                                */
 /******************************************************************/
+#ifndef __linux__ // GCC does not mangle return types: this would clash with size_t GetNumSoundtracks() in SDL/p_music.cpp
 int GetNumSoundtracks( void )
 {
 	return 0;
@@ -131,6 +132,7 @@ int GetNumSoundtracks( void )
 	//
 	//return gNumSoundtracks;
 }
+#endif
 
 
 

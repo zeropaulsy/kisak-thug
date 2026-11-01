@@ -137,6 +137,10 @@ Manager::Manager ( void )
 
     Dbg_Assert(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK | SDL_INIT_GAMECONTROLLER | SDL_INIT_AUDIO) >= 0); // the INIT_VIDEO is needed....
 
+#ifdef __linux__
+    extern void kisak_attach_script_pad(); // port/compat/linux_debug.cpp
+    kisak_attach_script_pad();
+#endif
     for (int i = 0; i < SDL_NumJoysticks(); i++)
     {
         if (SDL_IsGameController(i))

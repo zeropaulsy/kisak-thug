@@ -34,7 +34,9 @@
 #include <Gel/Scripting/script.h>
 #include <Gfx/2D/ScreenElemMan.h>
 
+#ifndef __linux__
 #include <Xinput.h>
+#endif
 //#include <libpad.h>
 
 #include <SDL.h>

@@ -281,7 +281,7 @@ bool App::bind_app_socket( int address, unsigned short port )
 	result = bind( m_socket, (struct sockaddr *)&host_address, sizeof(host_address));
 	if( result < 0 )// == SOCKET_ERROR )
 	{
-#ifdef WIN32
+#if defined( WIN32 ) || defined( __linux__ )
 		int err = WSAGetLastError();
 		if( err == WSAEADDRINUSE )  
 #else
@@ -2398,7 +2398,7 @@ void		App::ReportError( void )
 {
 	
 
-#ifdef WIN32
+#if defined( WIN32 ) || defined( __linux__ )
 	char msg[1024];
 
 	//Dbg_Printf( "%s: Error %d\n", m_name, WSAGetLastError());

@@ -1,13 +1,28 @@
 cmake_minimum_required(VERSION 3.16)
+
+if(CMAKE_HOST_SYSTEM_NAME STREQUAL "Linux")
+	set(KISAK_LINUX ON)
+	# 32-bit like the Windows build: the code and its on-disk data assume 32-bit pointers.
+	set(CMAKE_C_FLAGS "-m32 ${CMAKE_C_FLAGS}")
+	set(CMAKE_CXX_FLAGS "-m32 ${CMAKE_CXX_FLAGS}")
+endif()
+
 project(KisakThug)
 
 set(BIN_NAME "KisakThug")
 set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Code")
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_GENERATOR_PLATFORM "WIN32")
+if(NOT KISAK_LINUX)
+	set(CMAKE_GENERATOR_PLATFORM "WIN32")
+endif()
 
 include(cmake_files.cmake)
+
+if(KISAK_LINUX)
+	include(port/linux.cmake)
+	return()
+endif()
 
 target_compile_definitions(KisakThug PUBLIC WIN32)
 target_compile_definitions(KisakThug PUBLIC _DEBUG)

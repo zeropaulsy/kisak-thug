@@ -29,7 +29,7 @@
 #include <stdio.h>
 #include <string.h>
 #ifdef __PLAT_WN32__
-#include <shlwapi.h> // lwss: yes I am that lazy
+#include <Shlwapi.h> // lwss: yes I am that lazy
 #endif
 
 #include <Core/Defines.h>

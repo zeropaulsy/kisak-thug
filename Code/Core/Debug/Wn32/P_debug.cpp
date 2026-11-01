@@ -124,7 +124,7 @@ void	default_trap ( char* message )
 	{
 		case IDYES:
 
-			__asm int 3;		// trigger the debugger
+			__debugbreak();		// trigger the debugger
 			
 			break;
 	
@@ -135,7 +135,7 @@ void	default_trap ( char* message )
 	MessageBox ( GetActiveWindow(), message, "Assertion Failure",
 							MB_DEFBUTTON1 | MB_ICONEXCLAMATION );
 
-	__asm int 3;
+	__debugbreak();
 
 #endif	// __ALLOW_CONTINUE__
 

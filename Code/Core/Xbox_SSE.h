@@ -12,6 +12,33 @@
 #ifndef P3_SSE
 #define P3_SSE
 
+#ifdef __linux__
+// The MSVC __asm bodies below, as SSE intrinsics (same instructions, same results).
+#include <xmmintrin.h>
+inline int Ftoi_ASM(const float f) { return _mm_cvttss_si32(_mm_set_ss(f)); }
+inline float ReciprocalEstimate_ASM(const float f) { return _mm_cvtss_f32(_mm_rcp_ss(_mm_set_ss(f))); }
+inline float ReciprocalSqrtEstimate_ASM(const float f) { return _mm_cvtss_f32(_mm_rsqrt_ss(_mm_set_ss(f))); }
+inline float SqrtEstimate_ASM(const float f)
+{
+	__m128 x = _mm_set_ss(f);
+	return _mm_cvtss_f32(_mm_and_ps(_mm_mul_ss(_mm_rsqrt_ss(x), x), _mm_cmpneq_ss(_mm_setzero_ps(), x)));
+}
+inline float ReciprocalEstimateNR_ASM(const float f)
+{
+	float r = ReciprocalEstimate_ASM(f);
+	return (r + r) - f * r * r;
+}
+inline float ReciprocalSqrtEstimateNR_ASM(const float f)
+{
+	float r = ReciprocalSqrtEstimate_ASM(f);
+	return (0.5f * r) * (3.0f - f * r * r);
+}
+inline float SqrtEstimateNR_ASM(const float f)
+{
+	return f != 0.0f ? ReciprocalSqrtEstimateNR_ASM(f) * f : 0.0f;
+}
+#else // !__linux__
+
 
 //-----------------------------------------------------------------------------
 // Name: Ftoi_ASM
@@ -155,5 +182,7 @@ __forceinline float SqrtEstimateNR_ASM(const float f)
     return recsqrt;
 }
 
+
+#endif // !__linux__
 
 #endif // P3_SSE

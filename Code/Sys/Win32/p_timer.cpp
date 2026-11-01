@@ -186,6 +186,9 @@ static void InitTimerInfo(void)
 	s_vblank = 0;
 }
 
+#ifdef __linux__
+static __int64 getCycles(void) { return __builtin_ia32_rdtsc(); }
+#else
 __int64 __declspec(naked) __stdcall getCycles(void)
 {
 	_asm
@@ -194,6 +197,7 @@ __int64 __declspec(naked) __stdcall getCycles(void)
 		ret
 	}
 }
+#endif
 void Init(void)
 {
 	InitTimerInfo();

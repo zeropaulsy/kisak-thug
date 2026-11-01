@@ -18,3 +18,10 @@
 *.i64-unhandled
 *.log
 *.old
+.codegraph/
+
+/build-linux*
+/port/third_party
+/run
+/port/build-linux.log
+__pycache__

@@ -1794,7 +1794,7 @@ Manager::Manager( void )
 {	
 	int msg_id, i;
 
-#if( defined ( __PLAT_WN32__ ) || defined ( __PLAT_XBOX__ ))
+#if( ( defined ( __PLAT_WN32__ ) || defined ( __PLAT_XBOX__ ) ) && !defined( __linux__ )) // no WinSock startup on Linux
 	int err;
 	WORD version_required;
 	WSADATA wsa_data;

@@ -94,7 +94,12 @@ extern bool g_hasJustEnteredNetworkGame;
 #define D3DDevice_GetSwapChain(a,b) (NxXbox::EngineGlobals.p_Device)->GetSwapChain(a,b)
 #define D3DDevice_GetNumberOfSwapChains() (NxXbox::EngineGlobals.p_Device)->GetNumberOfSwapChains()
 #define D3DDevice_Reset(a) (NxXbox::EngineGlobals.p_Device)->Reset(a)
+#ifdef __linux__
+HRESULT kisak_present(IDirect3DDevice9* device, const RECT* a, const RECT* b, HWND c, const RGNDATA* d); // port/compat/linux_debug.cpp: debug screenshots
+#define D3DDevice_Present(a,b,c,d) kisak_present(NxXbox::EngineGlobals.p_Device,a,b,c,d)
+#else
 #define D3DDevice_Present(a,b,c,d) (NxXbox::EngineGlobals.p_Device)->Present(a,b,c,d)
+#endif
 #define D3DDevice_GetBackBuffer(a,b,c,d) (NxXbox::EngineGlobals.p_Device)->GetBackBuffer(a,b,c,d)
 #define D3DDevice_GetRasterStatus(a,b) (NxXbox::EngineGlobals.p_Device)->GetRasterStatus(a,b)
 #define D3DDevice_SetDialogBoxMode(a) (NxXbox::EngineGlobals.p_Device)->SetDialogBoxMode(a)
@@ -587,6 +592,7 @@ static inline void operator delete[]   ( void* block ) ;
 /* Global new/delete operators                                    */
 /*                                                                */
 /******************************************************************/
+#ifndef __linux__ // Linux: out of line in Core/Support/class.cpp (replaceable operators must not be inline)
 inline void* 	operator new( size_t size )
 {
 #ifdef KISAK_ORIGINAL_ALLOCATOR
@@ -599,11 +605,13 @@ inline void* 	operator new( size_t size )
 #endif
 	return mem;
 }
+#endif
 /******************************************************************/
 /*                                                                */
 /*                                                                */
 /******************************************************************/
 
+#ifndef __linux__ // Linux: out of line in Core/Support/class.cpp (replaceable operators must not be inline)
 inline void* 	operator new[] ( size_t size )
 {
 #ifdef KISAK_ORIGINAL_ALLOCATOR
@@ -616,6 +624,7 @@ inline void* 	operator new[] ( size_t size )
 #endif
 	return mem;
 }
+#endif
 #endif		// __PLAT_NGC__
 
 /******************************************************************/
@@ -722,6 +731,7 @@ inline void* 	operator new[]( size_t size, void* pLocation )
 /*                                                                */
 /******************************************************************/
 
+#ifndef __linux__ // Linux: out of line in Core/Support/class.cpp (replaceable operators must not be inline)
 inline void 	operator delete( void* pAddr )
 {
 #ifdef KISAK_ORIGINAL_ALLOCATOR
@@ -730,12 +740,14 @@ inline void 	operator delete( void* pAddr )
 	free(pAddr);
 #endif
 }
+#endif
 
 /******************************************************************/
 /*                                                                */
 /*                                                                */
 /******************************************************************/
 
+#ifndef __linux__ // Linux: out of line in Core/Support/class.cpp (replaceable operators must not be inline)
 inline void 	operator delete[]( void* pAddr )
 {
 #ifdef KISAK_ORIGINAL_ALLOCATOR
@@ -744,6 +756,7 @@ inline void 	operator delete[]( void* pAddr )
 	free(pAddr);
 #endif
 }
+#endif
 #endif		// __PLAT_NGC__
 
 // LWSS: AFX garbage MSVC shit allocators

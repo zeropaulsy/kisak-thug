@@ -46,6 +46,9 @@
 
 #ifdef __PLAT_WN32__
 //#include <winsock2.h>
+#ifdef __linux__
+#include <win32_net.h>
+#endif
 #endif // __PLAT_WN32__
 
 #ifdef __PLAT_XBOX__
@@ -541,6 +544,9 @@ public:
 };
 
 typedef int	(MsgHandlerCode)( MsgHandlerContext *context );
+MsgHandlerCode	handle_ack;
+MsgHandlerCode	handle_latency_response;
+MsgHandlerCode	handle_latency_test;
 
 class MsgHandler : public Lst::Node< MsgHandler >
 {

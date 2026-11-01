@@ -14,6 +14,8 @@ namespace Ed
 {
 
 class CGapManager;
+class CConcreteMetaPiece;
+class CClonedPiece;
 class GapInfo;
 class CParkManager;
 

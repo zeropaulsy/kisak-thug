@@ -49,6 +49,17 @@ namespace Obj
 	class CMovableContactComponent;
 	
 	struct SRailData;
+	class CSkaterCam;
+	class CManual;
+	class CSkaterCameraComponent;
+	class CSkaterAdjustPhysicsComponent;
+	class CSkaterFinalizePhysicsComponent;
+	class CSkaterNonLocalNetLogicComponent;
+	class CSkaterRotateComponent;
+	class CSkaterPhysicsControlComponent;
+	class CSkaterMatrixQueriesComponent;
+	class CSkaterStateHistoryComponent;
+	class CWalkComponent;
 
 class CSkaterCorePhysicsComponent : public CBaseComponent
 {

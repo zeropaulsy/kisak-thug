@@ -252,6 +252,9 @@ void mat_test(Mth::Matrix A,Mth::Matrix B,Mth::Matrix C);
 /******************************************************************/
 
 
+#ifdef __linux__
+#define main KisakGameMain // the process entry point is in Sys/Win32/WinMain.cpp, as WinMain is on Windows
+#endif
 int main ( sint argc, char** argv )
 { 	
 #ifdef __PLAT_NGC__

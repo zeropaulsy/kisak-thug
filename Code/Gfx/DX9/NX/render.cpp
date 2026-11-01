@@ -308,6 +308,9 @@ uint32 sVisibilityTestFIFO::AddStatus( void )
 //DWORD get_pixel_shader( sMaterial *p_material )
 void Swog(char const* format, ...)
 {
+#ifdef __linux__
+	return; // debug log with a hard-coded F:\ path: on Linux that would just be an odd file name in the cwd
+#endif
 	char buffer[4096];
 	static bool bFirst = true;
 	FILE* logFile;
@@ -1783,7 +1786,7 @@ void set_pixel_shader(IDirect3DPixelShader9* shader_id, uint32 num_passes )
 		}
 			
 		// Upload any pixel shader constants if required.
-		if( EngineGlobals.upload_pixel_shader_constants && ( shader_id > 0 ))
+		if( EngineGlobals.upload_pixel_shader_constants && ( shader_id != 0 ))
 		{
 			D3DDevice_SetPixelShaderConstantF( 0, &EngineGlobals.pixel_shader_constants[0], num_passes );
 			D3DDevice_SetPixelShaderConstantF( 4, &EngineGlobals.pixel_shader_constants[16], 1 );
@@ -3237,8 +3240,12 @@ void render_scene( sScene *p_scene, uint32 flags, uint32 viewport )
 		{
 			sMesh *p_mesh = p_scene->m_meshes[e];
 
+			#ifdef __linux__
+			__builtin_prefetch( p_mesh );
+#else
 			__asm mov eax, p_mesh			// Store mesh pointer.
 			__asm prefetcht0 [eax]			// Get first 32 bytes of sMesh structure.
+#endif
 			
 			if(( p_mesh->m_flags & sMesh::MESH_FLAG_ACTIVE ) && (( p_mesh->m_flags & ( sMesh::MESH_FLAG_SHADOW_VOLUME | sMesh::MESH_FLAG_BILLBOARD )) == 0 ))
 			{
@@ -3369,8 +3376,12 @@ void render_scene( sScene *p_scene, uint32 flags, uint32 viewport )
 		{
 			sMesh *p_mesh = p_scene->m_meshes[e];
 
+			#ifdef __linux__
+			__builtin_prefetch( p_mesh );
+#else
 			__asm mov eax, p_mesh			// Store mesh pointer.
 			__asm prefetcht0 [eax]			// Get first 32 bytes of sMesh structure.
+#endif
 
 			if(( p_mesh->m_flags & sMesh::MESH_FLAG_ACTIVE ) && (( p_mesh->m_flags & ( sMesh::MESH_FLAG_SHADOW_VOLUME | sMesh::MESH_FLAG_BILLBOARD )) == 0 ))
 			{
@@ -3428,8 +3439,12 @@ void render_scene( sScene *p_scene, uint32 flags, uint32 viewport )
 			{
 				sMesh *p_mesh = p_scene->m_meshes[e];
 
+				#ifdef __linux__
+				__builtin_prefetch( p_mesh );
+#else
 				__asm mov eax, p_mesh			// Store mesh pointer.
 				__asm prefetcht0 [eax]			// Get first 32 bytes of sMesh structure.
+#endif
 
 				if(( p_mesh->m_flags & sMesh::MESH_FLAG_ACTIVE ) && (( p_mesh->m_flags & ( sMesh::MESH_FLAG_SHADOW_VOLUME | sMesh::MESH_FLAG_BILLBOARD )) == 0 ))
 				{
@@ -3490,8 +3505,12 @@ void render_scene( sScene *p_scene, uint32 flags, uint32 viewport )
 			{
 				sMesh *p_mesh = p_scene->m_meshes[e];
 
+				#ifdef __linux__
+				__builtin_prefetch( p_mesh );
+#else
 				__asm mov eax, p_mesh			// Store mesh pointer.
 				__asm prefetcht0 [eax]			// Get first 32 bytes of sMesh structure.
+#endif
 
 				if(( p_mesh->m_flags & sMesh::MESH_FLAG_ACTIVE ) && (( p_mesh->m_flags & ( sMesh::MESH_FLAG_SHADOW_VOLUME | sMesh::MESH_FLAG_BILLBOARD )) == 0 ))
 				{

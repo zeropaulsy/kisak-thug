@@ -81,10 +81,12 @@ typedef int64 _BOOL8;
 
 #ifndef __PLAT_XBOX
 #ifndef _WINDOWS_
+#ifndef __linux__ // windows_base.h already defines these on Linux
 typedef int8 BYTE;
 typedef int16 WORD;
 typedef int32 DWORD;
 typedef int32 LONG;
+#endif
 typedef int BOOL;       // uppercase BOOL is usually 4 bytes
 #endif
 #endif

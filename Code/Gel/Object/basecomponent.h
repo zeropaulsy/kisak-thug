@@ -21,6 +21,7 @@ namespace Script
 
 namespace Obj
 {
+class CCompositeObject;
 
 // CBaseComponent is a virtual base class for object components
 class CBaseComponent : public Spt::Class
