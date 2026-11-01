@@ -25,3 +25,4 @@
 /run
 /port/build-linux.log
 __pycache__
+/port/notes/
