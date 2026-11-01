@@ -13922,6 +13922,13 @@ bool ScriptExitDemo( Script::CStruct*, Script::CScript* )
 	return true;		// actually will never get here
 }
 
+// @script | QuitGame | Asks the game to shut down. Called by the PC main menu quit_game script.
+bool ScriptQuitGame( Script::CStruct *pParams, Script::CScript *pScript )
+{
+	gbQuit = true;
+	return true;
+}
+
 /******************************************************************/
 /*                                                                */
 /*                                                                */

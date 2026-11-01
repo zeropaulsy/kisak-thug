@@ -292,7 +292,7 @@ void		Manager::MainLoop( void )
 		Win32_ProcessMsgPump();
 		Win32_GameNetUpdate();
 
-		if (g_isWindowInFocus)
+		if (g_isWindowInFocus || gbQuit)
 		{
 			break;
 		}
@@ -307,7 +307,7 @@ void		Manager::MainLoop( void )
 		{
 			Sleep(100u);
 			Win32_ProcessMsgPump();
-		} while (!g_isWindowInFocus);
+		} while (!g_isWindowInFocus && !gbQuit);
 
 		if (done)
 		{
@@ -318,7 +318,11 @@ void		Manager::MainLoop( void )
 
 #endif
 
+#ifdef __PLAT_WN32__
+	while ( !done && !gbQuit )
+#else
 	while ( !done )
+#endif
 	{
 // lwss Add
 #ifdef __PLAT_WN32__

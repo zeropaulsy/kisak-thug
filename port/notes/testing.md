@@ -23,7 +23,13 @@ port/run.sh "<game folder>"
 ```
 Timings are frames, so they drift if loading changes. Debug with `gdb -batch -ex run -ex bt`: asserts raise SIGTRAP, fatal outside a debugger.
 
+## Quit from the main menu
+`KISAK_QUIT_AT=1500 KISAK_PAD_SCRIPT="11@200-206,0@350-356,11@450-456,0@550-556"`: up to Quit, accept, up to Yes (No is the default), accept. The game exiting before frame 1500, with no `KISAK_QUIT_AT` line and exit code 0, is a pass. `kill -TERM` raises the same `SDL_QUIT` as closing the window.
+
+## Reading script asserts
+`Confused by '<name>'` can name the wrong symbol: unknown checksums print through a shared buffer, so every `%s` in the message shows the last one formatted. Retail scripts are in `Data/pre/qb.pre` and per-level packs such as `mainmenu.pre` (LZSS). They can call functions that `Scripts/` never mentions, so check the retail bytecode too.
+
 ## Status
-Verified with retail PC data, scripted pad, `-O2`: menus, Create-A-Skater, cutscene, New Jersey skating and bailing, HUD, traffic, 4800 frames with no crash; audio signal present on disk.
+Verified with retail PC data, scripted pad, `-O2`: menus, Create-A-Skater, cutscene, New Jersey skating and bailing, HUD, traffic, 4800 frames with no crash; audio signal present on disk; quit from the main menu; `SDL_QUIT`. By hand: menu quit and the window X.
 
 Not verified: Windows build after these changes, hand play, real gamepad, speakers, save/load, fullscreen and resolution options, other levels, netplay, a clean-machine install. Menu skater draws as a silhouette: not compared with Windows.

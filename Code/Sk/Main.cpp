@@ -23,6 +23,7 @@
 *****************************************************************************/
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 
@@ -797,6 +798,14 @@ extern uint8 * RES_gamecube;
 			Mem::PushMemProfile("MainLoop");
 			mlp_manager->MainLoop();
 			Mem::PopMemProfile(/*"MainLoop"*/);
+
+			// Quitting to the OS. The closedown below has never been run (see the note under it) and
+			// crashes, so leave it to the OS, as the commented out _exit in WinMain did.
+			if ( gbQuit )
+			{
+				fflush( NULL );
+				_Exit( 0 );
+			}
 			
 // The following code is theoretical, as we actually never shut down the whole game			
 // On the PS2, we use the script command "LoadExecPS2", which calls "ScriptLoadExecPS2" in cfuncs.cpp

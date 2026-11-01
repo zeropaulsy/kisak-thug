@@ -977,6 +977,7 @@ SCFunction CFunctionLookupTable[]=
 	{"InInternetMode",			CFuncs::ScriptInInternetMode},
 	{"LoadExecPS2",				CFuncs::ScriptLoadExecPS2},
 	{"ExitDemo",				CFuncs::ScriptExitDemo},
+	{"QuitGame",				CFuncs::ScriptQuitGame},
 	{"SendGameOverToObservers", GameNet::Manager::ScriptSendGameOverToObservers},
 	{"GameIsOver", 				CFuncs::ScriptGameIsOver},
 	{"EnteringNetGame",			CFuncs::ScriptEnteringNetGame},

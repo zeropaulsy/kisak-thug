@@ -30,3 +30,6 @@ Shared SDL_GameController code; Xinput.h guarded out. No keyboard on either OS y
 ## Network
 - `compat/win32_net.h`: Winsock names on POSIX sockets. WinSock startup guarded out of `Gel/Net/net.cpp`.
 - GameSpy: `_LINUX`, `common/win32/` excluded. Compiles and links only; never run (netplay is a TODO on Windows too).
+
+## Quitting
+Everything that quits sets `gbQuit` (`QuitGame` script function, window close). `MainLoop` stops on it and `Sk/Main.cpp` then calls `_Exit(0)`, skipping the closedown code after the main loop: that code has never run and crashes (first in `CViewer::v_stop_cb`, null `mp_server`).
